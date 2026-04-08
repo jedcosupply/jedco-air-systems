@@ -8,6 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="Main-Logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JEDCO Air Systems | Commercial HVAC Manufacturer's Rep" />
+  <meta property="og:description" content="JEDCO Air Systems is a commercial HVAC manufacturer's representative serving Metro Atlanta and the Southeast. Submittals, technical support, and order coordination — handled the same day." />
+  <meta property="og:url" content="https://jedco-air-systems.netlify.app" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,6 +39,7 @@
       color: var(--text-dark);
       background: var(--white);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     a { text-decoration: none; }
@@ -457,7 +463,7 @@
       background: var(--white);
       border: 1px solid var(--gray-mid);
       border-radius: 6px;
-      padding: 14px 14px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -683,7 +689,57 @@
       .why-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+    /* ─── HAMBURGER ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-dark);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-mid);
+      z-index: 199;
+      padding: 8px 5% 16px;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav ul { list-style: none; }
+    .mobile-nav ul li { border-bottom: 1px solid var(--gray-mid); }
+    .mobile-nav ul li:last-child { border-bottom: none; }
+    .mobile-nav ul li a {
+      display: block;
+      padding: 13px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+    .mobile-nav ul li a:hover { color: var(--red); }
+    .mobile-nav .mobile-cta { margin-top: 16px; width: 100%; text-align: center; }
+
     @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
       .nav-links { display: none; }
       .services-grid { grid-template-columns: 1fr; }
       .markets-grid { grid-template-columns: 1fr 1fr; }
@@ -721,7 +777,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#top" class="nav-logo" aria-label="JEDCO Air Systems Home">
-      <img src="Main-Logo.png" alt="JEDCO Air Systems" />
+      <img src="Main-Logo.png" alt="JEDCO Air Systems" width="192" height="192" />
     </a>
     <ul class="nav-links">
       <li><a href="#services">What We Do</a></li>
@@ -733,8 +789,25 @@
     <div class="nav-cta">
       <a href="#contact" class="btn btn-red">Get in Touch</a>
     </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="#services" class="mobile-nav-link">What We Do</a></li>
+    <li><a href="#markets" class="mobile-nav-link">Markets</a></li>
+    <li><a href="#lines" class="mobile-nav-link">Our Lines</a></li>
+    <li><a href="#why" class="mobile-nav-link">About</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <div class="mobile-cta">
+    <a href="#contact" class="btn btn-red mobile-nav-link" style="width:100%">Get in Touch</a>
+  </div>
+</div>
+
+<main>
 
 <!-- ─── HERO ─── -->
 <section class="hero" id="top">
@@ -949,8 +1022,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="1"/>
             <path d="M16 7V5a2 2 0 0 0-4 0v2"/>
-            <path d="M8 7V5a2 2 0 0 0-4 0v2" style="display:none"/>
-            <path d="M2 13h20"/>
+<path d="M2 13h20"/>
             <path d="M8 13v8"/>
             <path d="M16 13v8"/>
           </svg>
@@ -1206,32 +1278,34 @@
 
       <div class="contact-form">
         <div class="form-title">Send Us a Message</div>
-        <form action="mailto:sales@jedcosupply.com" method="post" enctype="text/plain">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
           <div class="form-row">
             <div class="form-group">
-              <label>First Name</label>
-              <input type="text" name="first_name" placeholder="John" />
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" name="first_name" placeholder="John" autocomplete="given-name" required />
             </div>
             <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" name="last_name" placeholder="Smith" />
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Smith" autocomplete="family-name" required />
             </div>
           </div>
           <div class="form-group">
-            <label>Company</label>
-            <input type="text" name="company" placeholder="ABC Mechanical" />
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="ABC Mechanical" autocomplete="organization" />
           </div>
           <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="john@abcmechanical.com" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@abcmechanical.com" autocomplete="email" required />
           </div>
           <div class="form-group">
-            <label>Phone</label>
-            <input type="tel" name="phone" placeholder="(404) 555-0100" />
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0100" autocomplete="tel" />
           </div>
           <div class="form-group">
-            <label>What do you need?</label>
-            <textarea name="message" placeholder="Tell us about your project — submittal request, quote, line availability, or general question..."></textarea>
+            <label for="message">What do you need?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project — submittal request, quote, line availability, or general question..."></textarea>
           </div>
           <button type="submit" class="btn btn-red form-submit">Send Message</button>
         </form>
@@ -1240,6 +1314,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ─── FOOTER ─── -->
 <footer class="footer">
@@ -1251,10 +1327,28 @@
       &copy; 2026 JEDCO Air Systems &nbsp;·&nbsp; A Division of JEDCO Supply &nbsp;·&nbsp; Suwanee, GA
     </div>
     <div class="footer-link">
-      <a href="https://jedcosupply.com" target="_blank" rel="noopener">jedcosupply.com &rarr;</a>
+      <a href="https://jedcosupply.com" target="_blank" rel="noopener noreferrer">jedcosupply.com &rarr;</a>
     </div>
   </div>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 </body>
 </html>
