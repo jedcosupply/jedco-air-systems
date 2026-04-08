@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEDCO Air Systems | Commercial HVAC Manufacturer's Rep — Metro Atlanta & Southeast</title>
+  <meta name="description" content="JEDCO Air Systems is a commercial HVAC manufacturer's representative serving Metro Atlanta and the Southeast. Submittals, technical support, and order coordination — handled the same day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:         #C8272D;
+      --red-dark:    #A51E23;
+      --blue:        #1B4F91;
+      --blue-dark:   #143D72;
+      --dark:        #0C1A28;
+      --dark-2:      #112236;
+      --gray-light:  #F4F6F9;
+      --gray-mid:    #DDE2EC;
+      --text-dark:   #1A202C;
+      --text-mid:    #4A5568;
+      --text-light:  #718096;
+      --white:       #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; }
+    img { display: block; }
+
+    /* ─── UTILITY ─── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-red    { background: var(--red); color: var(--white); border-color: var(--red); }
+    .btn-red:hover { background: var(--red-dark); border-color: var(--red-dark); }
+
+    .btn-blue   { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .btn-blue:hover { background: var(--blue-dark); }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.45);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+    .section-title .accent { color: var(--blue); }
+    .section-title .accent-red { color: var(--red); }
+
+    .section-desc {
+      margin-top: 14px;
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    /* ─── TOP STRIPE ─── */
+    .top-stripe {
+      height: 4px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--red) 40%, var(--blue) 60%, var(--blue) 100%);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-mid);
+      height: 68px;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta { flex-shrink: 0; }
+    .nav-cta .btn { padding: 9px 20px; font-size: 13px; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--dark);
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* dot grid texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    /* gradient accent */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg,
+        transparent 30%,
+        rgba(200,39,45,0.05) 60%,
+        rgba(27,79,145,0.09) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 22px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(46px, 6.5vw, 78px);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 26px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-ctas .btn { font-size: 14.5px; padding: 13px 28px; }
+
+    /* hero right panel */
+    .hero-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 32px 28px;
+    }
+    .hero-panel-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .hero-panel-items {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-panel-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .hero-panel-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(200,39,45,0.15);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-panel-icon svg {
+      width: 16px; height: 16px; color: var(--red);
+    }
+    .hero-panel-item-text strong {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+    .hero-panel-item-text span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+    .hero-panel-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 6px 0;
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--blue);
+      padding: 0;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 28px 20px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    /* ─── SECTION PADDING ─── */
+    .section { padding: 84px 0; }
+    .section-light { background: var(--gray-light); }
+    .section-dark {
+      background: var(--dark);
+    }
+    .section-dark .section-title { color: var(--white); }
+    .section-dark .section-desc  { color: rgba(255,255,255,0.6); }
+    .section-dark .section-eyebrow { color: #e05055; }
+    .section-dark .section-eyebrow::before { background: #e05055; }
+
+    /* ─── WHAT WE DO ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 52px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-top: 3px solid var(--red);
+      border-radius: 6px;
+      padding: 34px 30px;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .service-card:hover {
+      box-shadow: 0 10px 36px rgba(0,0,0,0.09);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      width: 46px; height: 46px;
+      background: rgba(200,39,45,0.09);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .service-icon svg { width: 22px; height: 22px; color: var(--red); }
+    .service-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 14.5px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ─── MARKETS ─── */
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 52px;
+    }
+    .market-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 30px 22px;
+      text-align: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .market-card:hover {
+      background: rgba(200,39,45,0.1);
+      border-color: rgba(200,39,45,0.35);
+    }
+    .market-icon {
+      width: 54px; height: 54px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .market-icon svg { width: 24px; height: 24px; color: rgba(255,255,255,0.8); }
+    .market-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .market-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.55;
+    }
+
+    /* ─── LINES ─── */
+    .lines-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 52px;
+    }
+    .line-card {
+      background: var(--white);
+      border: 1px solid var(--gray-mid);
+      border-radius: 6px;
+      padding: 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+    .line-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 3px 14px rgba(27,79,145,0.1);
+    }
+    .line-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .line-products {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+    .lines-footer {
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      text-align: center;
+    }
+    .lines-footer p {
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+
+    /* ─── WHY JEDCO ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px 48px;
+      margin-top: 52px;
+    }
+    .why-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .why-num {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .why-text h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .why-text p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .contact-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .contact-heading em { font-style: normal; color: var(--red); }
+    .contact-lead {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.75);
+    }
+    .contact-detail svg {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--red);
+    }
+    .contact-detail a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+    }
+    .contact-detail a:hover { color: var(--white); }
+
+    /* form */
+    .contact-form {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 36px 34px;
+    }
+    .form-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 4px;
+      padding: 10px 13px;
+      font-size: 14px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { height: 96px; resize: vertical; }
+    .form-submit {
+      width: 100%;
+      font-size: 14.5px;
+      padding: 13px;
+      margin-top: 4px;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-brand-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.55);
+    }
+    .footer-brand-name span { color: var(--red); }
+    .footer-copy {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-link a {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+    }
+    .footer-link a:hover { color: rgba(255,255,255,0.65); }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 3px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--blue) 100%);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-panel { display: none; }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); }
+      .lines-grid { grid-template-columns: repeat(4, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .markets-grid { grid-template-columns: 1fr 1fr; }
+      .lines-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        padding: 22px 16px;
+      }
+      .stat-item:nth-child(2n) { border-right: none; }
+      .stat-item:last-child, .stat-item:nth-last-child(2) { border-bottom: none; }
+      .footer-inner { flex-direction: column; text-align: center; gap: 8px; }
+      .hero { padding: 64px 0 60px; }
+      .section { padding: 60px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .markets-grid { grid-template-columns: 1fr; }
+      .lines-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP STRIPE -->
+<div class="top-stripe"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="JEDCO Air Systems Home">
+      <img src="Main-Logo-Black.png" alt="JEDCO Air Systems" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#markets">Markets</a></li>
+      <li><a href="#lines">Our Lines</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-red">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        JEDCO Air Systems &nbsp;·&nbsp; Suwanee, GA &nbsp;·&nbsp; Metro Atlanta & Southeast
+      </div>
+      <h1>
+        The Air-Side Rep<br />
+        You Don't Have<br />
+        <em>To Wait On.</em>
+      </h1>
+      <p class="hero-sub">
+        Commercial HVAC air-side representation for Metro Atlanta and the Southeast. We handle submittals, specs, equipment selection, and project coordination — from design through delivery.
+      </p>
+      <div class="hero-ctas">
+        <a href="#lines" class="btn btn-red">View Our Lines</a>
+        <a href="#contact" class="btn btn-outline-white">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <div class="hero-panel-label">What We Handle</div>
+      <div class="hero-panel-items">
+        <div class="hero-panel-item">
+          <div class="hero-panel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="hero-panel-item-text">
+            <strong>Specifications & Submittals</strong>
+            <span>Written and delivered on your schedule. Same-day when you need it.</span>
+          </div>
+        </div>
+        <div class="hero-panel-divider"></div>
+        <div class="hero-panel-item">
+          <div class="hero-panel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div class="hero-panel-item-text">
+            <strong>Technical Support</strong>
+            <span>CFM, static pressure, DOAS — answered in-house, not escalated.</span>
+          </div>
+        </div>
+        <div class="hero-panel-divider"></div>
+        <div class="hero-panel-item">
+          <div class="hero-panel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="hero-panel-item-text">
+            <strong>Order & Project Coordination</strong>
+            <span>One point of contact, start to ship. We track it so you don't have to.</span>
+          </div>
+        </div>
+        <div class="hero-panel-divider"></div>
+        <div class="hero-panel-item">
+          <div class="hero-panel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="1"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+              <circle cx="5.5" cy="18.5" r="2.5"/>
+              <circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div class="hero-panel-item-text">
+            <strong>Drop-Ship Fulfillment</strong>
+            <span>Manufacturer ships direct to your job site. No warehouse delays.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ─── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Manufacturer Lines</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2,000+</div>
+      <div class="stat-label">Quotes Completed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">5 States</div>
+      <div class="stat-label">Southeast Coverage</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Same Day</div>
+      <div class="stat-label">Submittal Response</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── WHAT WE DO ─── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">Full Project Support,<br /><span class="accent">Spec to Ship</span></h2>
+    <p class="section-desc">We're a manufacturer's representative for commercial air-side HVAC equipment in Metro Atlanta and the Southeast. Technical support, submittals, and project coordination — handled in-house by people who know the product.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h3>Specifications & Submittals</h3>
+        <p>We write and manage submittals on your timeline. Tell us when you need it and we'll have it ready — no waiting on a factory rep team three states away. If you need it by Friday, it's there by Friday.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+            <line x1="12" y1="22" x2="12" y2="15.5"/>
+            <polyline points="22 8.5 12 15.5 2 8.5"/>
+          </svg>
+        </div>
+        <h3>Technical Support</h3>
+        <p>CFM calculations, static pressure checks, equipment selection, DOAS design, FCU sizing — we know the products well enough to answer in-house. No "let me check with the factory on that" and no week-long wait for a callback.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h3>Order & Project Coordination</h3>
+        <p>One contact for every job. We track the order, manage the schedule, and keep you in the loop when something changes — so you're not the go-between for the manufacturer and the job site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MARKETS ─── -->
+<section class="section section-dark" id="markets">
+  <div class="container">
+    <div class="section-eyebrow">Markets We Serve</div>
+    <h2 class="section-title">Built for <span class="accent-red">Commercial Contractors</span></h2>
+    <p class="section-desc">We work with mechanical contractors across Metro Atlanta and the Southeast — from small owner-operated shops to mid-size firms running multiple projects. Multi-family is our #1 vertical, and we support the full range of commercial project types.</p>
+
+    <div class="markets-grid">
+      <div class="market-card">
+        <div class="market-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="1"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+            <line x1="15" y1="3" x2="15" y2="21"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="3" y1="15" x2="21" y2="15"/>
+          </svg>
+        </div>
+        <h3>Multi-Family & Apartment</h3>
+        <p>Our primary vertical. Fan coils, PTACs, ERVs, fire dampers, unit ventilators — we know what multifamily projects need and how fast they have to move.</p>
+      </div>
+
+      <div class="market-card">
+        <div class="market-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18"/>
+            <path d="M5 21V7l8-4v18"/>
+            <path d="M19 21V11l-6-4"/>
+            <line x1="9" y1="11" x2="9" y2="11.01"/>
+            <line x1="13" y1="11" x2="13" y2="11.01"/>
+            <line x1="9" y1="15" x2="9" y2="15.01"/>
+            <line x1="13" y1="15" x2="13" y2="15.01"/>
+          </svg>
+        </div>
+        <h3>Light Commercial</h3>
+        <p>Schools, offices, churches, banks, self-storage, fitness. We quote it all — grilles, diffusers, dampers, fans, and terminal units — and handle the full submittal package.</p>
+      </div>
+
+      <div class="market-card">
+        <div class="market-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20V8l8-6v18"/>
+            <path d="M22 20V8l-8-6"/>
+            <line x1="2" y1="20" x2="22" y2="20"/>
+            <line x1="10" y1="20" x2="14" y2="20"/>
+            <line x1="10" y1="14" x2="14" y2="14"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <h3>Hospitality</h3>
+        <p>Hotels, branded properties, and convention facilities. We work on Hilton, Marriott, and similar projects regularly — fast turnaround on PTACs, fan coils, and air distribution is standard.</p>
+      </div>
+
+      <div class="market-card">
+        <div class="market-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="1"/>
+            <path d="M16 7V5a2 2 0 0 0-4 0v2"/>
+            <path d="M8 7V5a2 2 0 0 0-4 0v2" style="display:none"/>
+            <path d="M2 13h20"/>
+            <path d="M8 13v8"/>
+            <path d="M16 13v8"/>
+          </svg>
+        </div>
+        <h3>Industrial & Warehouse</h3>
+        <p>Make-up air units, gas infrared heaters, HVLS fans, industrial ventilation — we carry the lines and the technical knowledge for industrial heating and air applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OUR LINES ─── -->
+<section class="section section-light" id="lines">
+  <div class="container">
+    <div class="section-eyebrow">Our Lines</div>
+    <h2 class="section-title">Lines We <span class="accent">Represent</span></h2>
+    <p class="section-desc">50+ manufacturer lines covering the full air-side spectrum — registers, grilles, diffusers, terminal units, fans, dampers, fire protection, IAQ, and heating systems.</p>
+
+    <div class="lines-grid">
+      <div class="line-card">
+        <div class="line-name">Krueger</div>
+        <div class="line-products">Registers · Grilles · Diffusers · Terminal Units · Fan Coils</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">United Enertech</div>
+        <div class="line-products">Louvers · Dampers · Fire Smoke · Fire Dampers</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Twin City Fan</div>
+        <div class="line-products">Commercial · Lab · Industrial Fans</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">ACME Fans</div>
+        <div class="line-products">Commercial · Lab · Industrial Fans</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">CaptiveAire</div>
+        <div class="line-products">Commercial Fans · Kitchen Hoods · Grease Duct</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">FabricAir</div>
+        <div class="line-products">Fabric Duct Systems</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Sterling</div>
+        <div class="line-products">Gas Unit Heaters · Make-Up Air Systems · Infrared Unit Heaters</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">SpaceRay</div>
+        <div class="line-products">Gas Tube Heaters · Gas Ceramic Heaters</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Indeeco</div>
+        <div class="line-products">Electric Heat · Heat Trace</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">RenewAire</div>
+        <div class="line-products">Commercial ERVs</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Acudor</div>
+        <div class="line-products">Access Doors · Roof Hatches · Smoke Vents</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">AES Industries</div>
+        <div class="line-products">Concentric Drop Boxes · Drop Box Diffusers · Roof Curbs</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Air Balance</div>
+        <div class="line-products">Dampers · Louvers · Silencers · Attenuation</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">AJ Manufacturing</div>
+        <div class="line-products">Registers · Grilles · Diffusers · Stainless Steel</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Amana</div>
+        <div class="line-products">PTACs · VTACs</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Hart & Cooley</div>
+        <div class="line-products">Registers · Grilles · Diffusers</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Modine</div>
+        <div class="line-products">Gas Unit Heaters · Gas Radiant Heaters</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Fantech</div>
+        <div class="line-products">Radon · HEPA Filtration · ERVs · Dryer Booster</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Santa-Fe</div>
+        <div class="line-products">Dehumidifiers</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">WellAir</div>
+        <div class="line-products">Plasma Air Purification</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Envira-North</div>
+        <div class="line-products">HVLS Fans</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">C&S Air Products</div>
+        <div class="line-products">Louvers · Control Dampers · Fire Dampers</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Dynasonics</div>
+        <div class="line-products">Silencers · Acoustical Louvers · Sound Attenuators</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Honeywell</div>
+        <div class="line-products">Thermostats · Gas Detection</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Friedrich</div>
+        <div class="line-products">Mini Splits · VTACs · PTACs</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Babcock Davis</div>
+        <div class="line-products">Access Doors · Roof Hatches · Smoke Vents</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Broan / NuTone</div>
+        <div class="line-products">Cabinet Fans · Inline Fans · Fresh Air Dampers</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Plenums Inc.</div>
+        <div class="line-products">Concentric Diffusers · Drop Box Supplies</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Softaire Diffusers</div>
+        <div class="line-products">High Performance Ceiling Diffusers</div>
+      </div>
+      <div class="line-card">
+        <div class="line-name">Soler & Palau</div>
+        <div class="line-products">Cabinet Fans · Roof Top Propellers · Sidewall Prop</div>
+      </div>
+    </div>
+
+    <div class="lines-footer">
+      <p>Showing 30 of 50+ lines. Additional manufacturers available — ask about your specific project needs.</p>
+      <a href="#contact" class="btn btn-blue">Request Full Line Card</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY JEDCO AIR SYSTEMS ─── -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-eyebrow">Why JEDCO Air Systems</div>
+    <h2 class="section-title">What Makes Us <span class="accent">Different</span></h2>
+    <p class="section-desc">Most rep agencies in this market are built for plan-and-spec engineers and large GCs. We're built for the contractor who needs a rep that picks up the phone.</p>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">1</div>
+        <div class="why-text">
+          <h3>You Don't Wait on Submittals</h3>
+          <p>Most reps make you follow up. We don't. When you need a submittal by Friday, you have it by Friday. Same-day response is how we operate — not an upsell.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">2</div>
+        <div class="why-text">
+          <h3>Technical Answers Without the Runaround</h3>
+          <p>CFM, static pressure, DOAS sizing, FCU selection — we know the products well enough to answer directly. No "let me check with the factory on that" delays.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">3</div>
+        <div class="why-text">
+          <h3>Rep & Supply Under One Roof</h3>
+          <p>JEDCO Air Systems is the rep division of JEDCO Supply — a stocking wholesale distributor with 28,000+ sq ft of inventory in Suwanee, GA. Rep support and in-stock product in one call.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">4</div>
+        <div class="why-text">
+          <h3>One Contact. Every Job.</h3>
+          <p>No rotating project managers. No re-explaining your job to someone new. Your rep knows your active projects and tracks them so you don't have to be the go-between.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">5</div>
+        <div class="why-text">
+          <h3>Built for the Contractor the Big Agencies Overlook</h3>
+          <p>We focus on the small-to-mid mechanical contractor — owner-operated shops and firms running multi-family, light commercial, and hospitality jobs across Metro Atlanta.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-num">6</div>
+        <div class="why-text">
+          <h3>Metro Atlanta, Not a Remote Account Team</h3>
+          <p>We're in Suwanee, GA. We know the local market, the contractors, and how Atlanta jobs move. No time zone lag, no account managed from another region.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── CONTACT ─── -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-left">
+        <h2 class="contact-heading">
+          Let's Talk About<br />
+          Your <em>Next Job.</em>
+        </h2>
+        <p class="contact-lead">
+          Whether you need a submittal, a quote on a line we carry, or just want to know if we're the right fit for your project — reach out. We respond the same day.
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>1105 Satellite Blvd, Suite 300<br />Suwanee, GA 30024</span>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:6786082858">(678) 608-2858</a>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:sales@jedcosupply.com">sales@jedcosupply.com</a>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Monday – Friday, 7:30 AM – 5:00 PM ET</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">Send Us a Message</div>
+        <form action="mailto:sales@jedcosupply.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" placeholder="John" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="ABC Mechanical" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="john@abcmechanical.com" />
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="(404) 555-0100" />
+          </div>
+          <div class="form-group">
+            <label>What do you need?</label>
+            <textarea name="message" placeholder="Tell us about your project — submittal request, quote, line availability, or general question..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-red form-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name"><span>JEDCO</span> Air Systems</div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 JEDCO Air Systems &nbsp;·&nbsp; A Division of JEDCO Supply &nbsp;·&nbsp; Suwanee, GA
+    </div>
+    <div class="footer-link">
+      <a href="https://jedcosupply.com" target="_blank" rel="noopener">jedcosupply.com &rarr;</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
