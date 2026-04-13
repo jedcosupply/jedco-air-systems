@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'black/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
