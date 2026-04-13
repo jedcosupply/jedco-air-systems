@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JEDCO Air Systems - The Air-Side Rep You Don't Have to Wait On</title>
+<title>JEDCO Air Systems | Commercial HVAC Manufacturer's Rep — Metro Atlanta & Southeast</title>
+<meta name="description" content="JEDCO Air Systems is a commercial HVAC manufacturer's representative serving Metro Atlanta and the Southeast. Submittals, technical support, and order coordination — handled the same day." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JEDCO Air Systems | Commercial HVAC Manufacturer's Rep" />
+<meta property="og:description" content="JEDCO Air Systems is a commercial HVAC manufacturer's representative serving Metro Atlanta and the Southeast. Submittals, technical support, and order coordination — handled the same day." />
+<meta property="og:url" content="https://jedco-air-systems-black.netlify.app" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -122,8 +130,19 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,0.07);
 .fu.on{opacity:1;transform:translateY(0)}
 .d1{transition-delay:0.15s}
 .d2{transition-delay:0.3s}
-@media(max-width:900px){
-  nav{padding:0 24px}.nav-links{display:none}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.ham span{display:block;width:22px;height:2px;background:white;transition:transform 0.2s,opacity 0.2s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(13,17,23,0.98);z-index:99;padding:32px 24px;flex-direction:column;gap:0;overflow-y:auto}
+.mob-nav a{color:var(--light-muted);text-decoration:none;font-family:var(--fd);font-weight:700;font-size:22px;letter-spacing:0.04em;text-transform:uppercase;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);transition:color 0.2s}
+.mob-nav a:hover{color:white}
+.mob-nav .mob-cta{margin-top:24px;background:var(--red);color:white;text-align:center;border:none;padding:16px;transition:background 0.2s}
+.mob-nav .mob-cta:hover{background:var(--red-light)}
+@media (max-width:900px) {
+  nav{padding:0 24px}.nav-links{display:none}.ham{display:flex}
+  .mob-nav.open{display:flex}
   .hero{padding:0 24px 64px}
   .vbar{flex-direction:column;align-items:flex-start;gap:16px;padding:24px}
   .creds{padding:72px 24px}.creds-top{grid-template-columns:1fr;gap:24px}.creds-r{padding-top:0}
@@ -151,10 +170,23 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,0.07);
     <a href="#diff">Why JEDCO</a>
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
-    <a href="https://jedcosupply.com" target="_blank">JEDCO Supply &rarr;</a>
+    <a href="https://jedcosupply.com" target="_blank" rel="noopener noreferrer">JEDCO Supply &rarr;</a>
     <a href="#contact" class="btn-nav">Start a Project</a>
   </div>
+  <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mob-nav">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mob-nav" id="mob-nav" role="dialog" aria-label="Navigation">
+  <a href="#creds" >What We Do</a>
+  <a href="#ptypes">Verticals</a>
+  <a href="#diff">Why JEDCO</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+  <a href="https://jedcosupply.com" target="_blank" rel="noopener noreferrer">JEDCO Supply &rarr;</a>
+  <a href="#contact" class="mob-cta">Start a Project</a>
+</div>
 
 <section class="hero">
   <div class="hbg"></div><div class="hbi"></div>
@@ -215,7 +247,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,0.07);
 
 <section class="diff" id="diff">
   <div class="diff-in">
-    <div class="diff-img fu"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80" alt="HVAC technician on job site"></div>
+    <div class="diff-img fu"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80" alt="HVAC technician on job site" loading="lazy"></div>
     <div>
       <div class="eye fu">Why JEDCO Air Systems</div>
       <h2 class="h2 fu d1">Most Reps Make<br>You Chase Them.</h2>
@@ -282,7 +314,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,0.07);
     </div>
     <div class="ft-col">
       <h5>Company</h5>
-      <a href="#creds">What We Do</a><a href="#ptypes">Verticals</a><a href="#diff">Why JEDCO</a><a href="#products">Products</a><a href="#contact">Contact</a><a href="https://jedcosupply.com" target="_blank">JEDCO Supply</a>
+      <a href="#creds">What We Do</a><a href="#ptypes">Verticals</a><a href="#diff">Why JEDCO</a><a href="#products">Products</a><a href="#contact">Contact</a><a href="https://jedcosupply.com" target="_blank" rel="noopener noreferrer">JEDCO Supply</a>
     </div>
     <div class="ft-col">
       <h5>Location</h5>
@@ -307,8 +339,25 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,0.07);
   document.getElementById("em1").href="mailto:"+e;
   document.getElementById("em2").href="mailto:"+e;
   document.getElementById("em2").textContent=e;
+
   var obs=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting)en.target.classList.add("on")});},{threshold:0.12});
   document.querySelectorAll(".fu").forEach(function(el){obs.observe(el)});
+
+  var ham=document.getElementById("ham"),mob=document.getElementById("mob-nav");
+  ham.addEventListener("click",function(){
+    var o=ham.classList.toggle("open");
+    ham.setAttribute("aria-expanded",String(o));
+    mob.classList.toggle("open",o);
+    document.body.style.overflow=o?"hidden":"";
+  });
+  mob.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click",function(){
+      ham.classList.remove("open");
+      ham.setAttribute("aria-expanded","false");
+      mob.classList.remove("open");
+      document.body.style.overflow="";
+    });
+  });
 })();
 </script>
 </body>
