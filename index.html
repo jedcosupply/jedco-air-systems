@@ -326,35 +326,26 @@
       padding: 10px 0;
     }
     .hero-panel-cat-title {
+      display: flex;
+      align-items: center;
+      gap: 7px;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
-    .hero-panel-cat-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
+    .hero-panel-cat-title svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      opacity: 0.85;
     }
-    .hero-panel-cat-list li {
+    .hero-panel-cat-text {
       font-size: 12.5px;
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.4;
-      padding-left: 10px;
-      position: relative;
-    }
-    .hero-panel-cat-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 7px;
-      width: 4px;
-      height: 1px;
-      background: var(--red);
-      opacity: 0.5;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.5;
     }
 
     /* ─── STATS BAR ─── */
@@ -887,49 +878,41 @@
       <div class="hero-panel-categories">
 
         <div class="hero-panel-category">
-          <div class="hero-panel-cat-title">Air Distribution</div>
-          <ul class="hero-panel-cat-list">
-            <li>Registers &amp; Grilles</li>
-            <li>Diffusers &amp; Slot Diffusers</li>
-            <li>Terminal Units &amp; Fan Coils</li>
-            <li>T-Bar Lay-Ins</li>
-          </ul>
+          <div class="hero-panel-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
+            Air Distribution
+          </div>
+          <p class="hero-panel-cat-text">Registers &amp; Grilles, Diffusers &amp; Slot Diffusers, Terminal Units &amp; Fan Coils, and T-Bar Lay-Ins.</p>
         </div>
 
         <div class="hero-panel-divider"></div>
 
         <div class="hero-panel-category">
-          <div class="hero-panel-cat-title">Air Control</div>
-          <ul class="hero-panel-cat-list">
-            <li>Fire &amp; Smoke Dampers</li>
-            <li>Control &amp; Volume Dampers</li>
-            <li>Louvers</li>
-            <li>Access Doors</li>
-          </ul>
+          <div class="hero-panel-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/><circle cx="2" cy="6" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="10" cy="18" r="1.5"/></svg>
+            Air Control
+          </div>
+          <p class="hero-panel-cat-text">Fire &amp; Smoke Dampers, Control &amp; Volume Dampers, Louvers, and Access Doors.</p>
         </div>
 
         <div class="hero-panel-divider"></div>
 
         <div class="hero-panel-category">
-          <div class="hero-panel-cat-title">Air Movement</div>
-          <ul class="hero-panel-cat-list">
-            <li>Cabinet &amp; Inline Fans</li>
-            <li>Make-Up Air Units</li>
-            <li>ERVs &amp; Fresh Air Fans</li>
-            <li>HVLS Fans</li>
-          </ul>
+          <div class="hero-panel-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 8a4 4 0 0 1 0 8"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+            Air Movement
+          </div>
+          <p class="hero-panel-cat-text">Cabinet &amp; Inline Fans, Make-Up Air Units, ERVs &amp; Fresh Air Fans, and HVLS Fans.</p>
         </div>
 
         <div class="hero-panel-divider"></div>
 
         <div class="hero-panel-category">
-          <div class="hero-panel-cat-title">Air Quality</div>
-          <ul class="hero-panel-cat-list">
-            <li>Filtration &amp; Air Cleaners</li>
-            <li>Dehumidifiers</li>
-            <li>Air Purification</li>
-            <li>Gas Detection</li>
-          </ul>
+          <div class="hero-panel-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            Air Quality
+          </div>
+          <p class="hero-panel-cat-text">Filtration &amp; Air Cleaners, Dehumidifiers, Air Purification, and Gas Detection.</p>
         </div>
 
       </div>
