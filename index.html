@@ -144,8 +144,10 @@
       justify-content: space-between;
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { height: 48px; width: auto; }
-    .nav-logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; color: var(--navy); letter-spacing: 0.02em; line-height: 1.1; }
+    .nav-logo img { align-self: stretch; width: auto; height: 100%; }
+    .nav-logo-text { display: flex; flex-direction: column; justify-content: center; gap: 1px; line-height: 1; }
+    .nav-logo-text .logo-jedco { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 30px; color: var(--blue); letter-spacing: 0.03em; }
+    .nav-logo-text .logo-sub { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; color: var(--dark); letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -326,7 +328,7 @@
       margin: 0 auto;
       padding: 0 5%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
     .stat-item {
       display: flex;
@@ -352,6 +354,11 @@
       color: rgba(255,255,255,0.65);
       text-transform: uppercase;
       letter-spacing: 0.09em;
+    }
+    .stat-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 4px;
     }
 
     /* ─── SECTION PADDING ─── */
@@ -750,15 +757,14 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
       .stats-inner {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
       .stat-item {
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.12);
         padding: 22px 16px;
       }
-      .stat-item:nth-child(2n) { border-right: none; }
-      .stat-item:last-child, .stat-item:nth-last-child(2) { border-bottom: none; }
+      .stat-item:last-child { border-bottom: none; }
       .footer-inner { flex-direction: column; text-align: center; gap: 8px; }
       .hero { padding: 64px 0 60px; }
       .section { padding: 60px 0; }
@@ -779,8 +785,11 @@
 <nav>
   <div class="nav-inner">
     <a href="#top" class="nav-logo" aria-label="JEDCO Air Systems Home">
-      <img src="JedTriangleNew.svg" alt="" width="48" height="48" />
-      <span class="nav-logo-text">JEDCO Air Systems</span>
+      <img src="JedTriangleNew.svg" alt="" />
+      <span class="nav-logo-text">
+        <span class="logo-jedco">JEDCO</span>
+        <span class="logo-sub">Air Systems</span>
+      </span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">What We Do</a></li>
@@ -826,7 +835,7 @@
         <em>To Wait On.</em>
       </h1>
       <p class="hero-sub">
-        Commercial HVAC air-side representation for Metro Atlanta and the Southeast. We handle submittals, specs, equipment selection, and project coordination — from design through delivery.
+        Commercial HVAC manufacturer's representative for Metro Atlanta and the Southeast specializing in air distribution, air control, air movement, and air quality.
       </p>
       <div class="hero-ctas">
         <a href="#lines" class="btn btn-red">View Our Lines</a>
@@ -901,20 +910,19 @@
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-number">50+</div>
-      <div class="stat-label">Manufacturer Lines</div>
+      <div class="stat-number">13+</div>
+      <div class="stat-label">Years Serving Contractors</div>
+      <div class="stat-desc">Georgia HVAC heritage since 2013</div>
     </div>
     <div class="stat-item">
       <div class="stat-number">2,000+</div>
-      <div class="stat-label">Quotes Completed</div>
+      <div class="stat-label">Quotes Per Year</div>
+      <div class="stat-desc">Active across Metro Atlanta &amp; Southeast</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">5 States</div>
-      <div class="stat-label">Southeast Coverage</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">Same Day</div>
-      <div class="stat-label">Submittal Response</div>
+      <div class="stat-number">12</div>
+      <div class="stat-label">Dedicated Sales Representatives</div>
+      <div class="stat-desc">Air-side specialists, not generalists</div>
     </div>
   </div>
 </div>
@@ -924,7 +932,7 @@
   <div class="container">
     <div class="section-eyebrow">What We Do</div>
     <h2 class="section-title">Full Project Support,<br /><span class="accent">Spec to Ship</span></h2>
-    <p class="section-desc">We're a manufacturer's representative for commercial air-side HVAC equipment in Metro Atlanta and the Southeast. Technical support, submittals, and project coordination — handled in-house by people who know the product.</p>
+    <p class="section-desc">We're committed to reliable and expert support until the job is done: one dedicated rep who answers the phone, accurate submittals back before Friday, and technical answers without bouncing you to the manufacturer.</p>
 
     <div class="services-grid">
       <div class="service-card">
@@ -938,7 +946,7 @@
           </svg>
         </div>
         <h3>Specifications & Submittals</h3>
-        <p>We write and manage submittals on your timeline. Tell us when you need it and we'll have it ready — no waiting on a factory rep team three states away. If you need it by Friday, it's there by Friday.</p>
+        <p>We write and manage submittals on your timeline. Tell us when you need it and we'll have it ready. If you need it by Friday, it's there by Friday.</p>
       </div>
 
       <div class="service-card">
@@ -950,7 +958,7 @@
           </svg>
         </div>
         <h3>Technical Support</h3>
-        <p>CFM calculations, static pressure checks, equipment selection, DOAS design, FCU sizing — we know the products well enough to answer in-house. No "let me check with the factory on that" and no week-long wait for a callback.</p>
+        <p>CFM calculations, static pressure checks, equipment selection, DOAS design, FCU sizing. We know the products well enough to answer in-house. No "let me check with the factory on that" and no week-long wait for a callback.</p>
       </div>
 
       <div class="service-card">
@@ -961,7 +969,7 @@
           </svg>
         </div>
         <h3>Order & Project Coordination</h3>
-        <p>One contact for every job. We track the order, manage the schedule, and keep you in the loop when something changes — so you're not the go-between for the manufacturer and the job site.</p>
+        <p>One contact for every job. We track the order, manage the schedule, and keep you in the loop when something changes. You shouldn't have to be the go-between for the manufacturer and the job site.</p>
       </div>
     </div>
   </div>
@@ -972,7 +980,7 @@
   <div class="container">
     <div class="section-eyebrow">Markets We Serve</div>
     <h2 class="section-title">Built for <span class="accent-red">Commercial Contractors</span></h2>
-    <p class="section-desc">We work with mechanical contractors across Metro Atlanta and the Southeast — from small owner-operated shops to mid-size firms running multiple projects. Multi-family is our #1 vertical, and we support the full range of commercial project types.</p>
+    <p class="section-desc">We work with mechanical contractors across Metro Atlanta and the Southeast, from small owner-operated shops to mid-size firms running multiple projects.</p>
 
     <div class="markets-grid">
       <div class="market-card">
