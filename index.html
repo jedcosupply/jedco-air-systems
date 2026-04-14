@@ -162,7 +162,7 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--red); }
-    .nav-cta { flex-shrink: 0; }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
     .nav-cta .btn { padding: 9px 20px; font-size: 13px; }
     .nav-supply-link {
       display: flex;
@@ -846,12 +846,14 @@
       <li><a href="#why">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://www.jedcosupply.com/" target="_blank" rel="noopener" class="nav-supply-link">
-      JEDCO Supply
-      <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
-    </a>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-red">Get in Touch</a>
+    <div class="nav-right">
+      <a href="https://www.jedcosupply.com/" target="_blank" rel="noopener" class="nav-supply-link">
+        JEDCO Supply
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+      </a>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-red">Get in Touch</a>
+      </div>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
       <span></span><span></span><span></span>
