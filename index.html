@@ -317,6 +317,45 @@
       background: rgba(255,255,255,0.07);
       margin: 6px 0;
     }
+    .hero-panel-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .hero-panel-category {
+      padding: 10px 0;
+    }
+    .hero-panel-cat-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+    .hero-panel-cat-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .hero-panel-cat-list li {
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.4;
+      padding-left: 10px;
+      position: relative;
+    }
+    .hero-panel-cat-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 4px;
+      height: 1px;
+      background: var(--red);
+      opacity: 0.5;
+    }
 
     /* ─── STATS BAR ─── */
     .stats-bar {
@@ -844,63 +883,55 @@
     </div>
 
     <div class="hero-panel">
-      <div class="hero-panel-label">What We Handle</div>
-      <div class="hero-panel-items">
-        <div class="hero-panel-item">
-          <div class="hero-panel-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-          </div>
-          <div class="hero-panel-item-text">
-            <strong>Specifications & Submittals</strong>
-            <span>Written and delivered on your schedule. Same-day when you need it.</span>
-          </div>
+      <div class="hero-panel-label">Products We Represent</div>
+      <div class="hero-panel-categories">
+
+        <div class="hero-panel-category">
+          <div class="hero-panel-cat-title">Air Distribution</div>
+          <ul class="hero-panel-cat-list">
+            <li>Registers &amp; Grilles</li>
+            <li>Diffusers &amp; Slot Diffusers</li>
+            <li>Terminal Units &amp; Fan Coils</li>
+            <li>T-Bar Lay-Ins</li>
+          </ul>
         </div>
+
         <div class="hero-panel-divider"></div>
-        <div class="hero-panel-item">
-          <div class="hero-panel-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-              <line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-          </div>
-          <div class="hero-panel-item-text">
-            <strong>Technical Support</strong>
-            <span>CFM, static pressure, DOAS — answered in-house, not escalated.</span>
-          </div>
+
+        <div class="hero-panel-category">
+          <div class="hero-panel-cat-title">Air Control</div>
+          <ul class="hero-panel-cat-list">
+            <li>Fire &amp; Smoke Dampers</li>
+            <li>Control &amp; Volume Dampers</li>
+            <li>Louvers</li>
+            <li>Access Doors</li>
+          </ul>
         </div>
+
         <div class="hero-panel-divider"></div>
-        <div class="hero-panel-item">
-          <div class="hero-panel-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 12 19.79 19.79 0 0 1 1.08 3.18 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </div>
-          <div class="hero-panel-item-text">
-            <strong>Order & Project Coordination</strong>
-            <span>One point of contact, start to ship. We track it so you don't have to.</span>
-          </div>
+
+        <div class="hero-panel-category">
+          <div class="hero-panel-cat-title">Air Movement</div>
+          <ul class="hero-panel-cat-list">
+            <li>Cabinet &amp; Inline Fans</li>
+            <li>Make-Up Air Units</li>
+            <li>ERVs &amp; Fresh Air Fans</li>
+            <li>HVLS Fans</li>
+          </ul>
         </div>
+
         <div class="hero-panel-divider"></div>
-        <div class="hero-panel-item">
-          <div class="hero-panel-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="3" width="15" height="13" rx="1"/>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-              <circle cx="5.5" cy="18.5" r="2.5"/>
-              <circle cx="18.5" cy="18.5" r="2.5"/>
-            </svg>
-          </div>
-          <div class="hero-panel-item-text">
-            <strong>Drop-Ship Fulfillment</strong>
-            <span>Manufacturer ships direct to your job site. No warehouse delays.</span>
-          </div>
+
+        <div class="hero-panel-category">
+          <div class="hero-panel-cat-title">Air Quality</div>
+          <ul class="hero-panel-cat-list">
+            <li>Filtration &amp; Air Cleaners</li>
+            <li>Dehumidifiers</li>
+            <li>Air Purification</li>
+            <li>Gas Detection</li>
+          </ul>
         </div>
+
       </div>
     </div>
   </div>
