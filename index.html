@@ -367,6 +367,61 @@
       line-height: 1.5;
     }
 
+    /* ─── VENDOR BAR ─── */
+    .vendor-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-mid);
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .vendor-bar-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.3);
+      white-space: nowrap;
+      padding: 0 28px;
+      flex-shrink: 0;
+      border-right: 1px solid var(--gray-mid);
+      margin-right: 28px;
+    }
+    .vendor-bar-track { overflow: hidden; flex: 1; }
+    .vendor-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: max-content;
+      animation: vendor-scroll 30s linear infinite;
+    }
+    .vendor-bar-inner:hover { animation-play-state: paused; }
+    .vendor-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--dark);
+      white-space: nowrap;
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+    .vendor-name:hover { opacity: 1; }
+    .vendor-sep {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--red);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+    @keyframes vendor-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     /* ─── STATS BAR ─── */
     .stats-bar {
       background: var(--blue);
@@ -518,6 +573,7 @@
       border: 2px solid var(--gray-mid);
       border-radius: 10px;
       overflow: hidden;
+      margin-top: 32px;
     }
     .prod-card {
       background: var(--white);
@@ -1020,23 +1076,32 @@
   </div>
 </section>
 
-<!-- ─── STATS BAR ─── -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-number">13+</div>
-      <div class="stat-label">Years Serving Contractors</div>
-      <div class="stat-desc">Georgia HVAC heritage since 2013</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">2,000+</div>
-      <div class="stat-label">Quotes Per Year</div>
-      <div class="stat-desc">Active across Metro Atlanta &amp; Southeast</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">12</div>
-      <div class="stat-label">Dedicated Sales Representatives</div>
-      <div class="stat-desc">Air-side specialists, not generalists</div>
+<!-- ─── VENDOR BAR ─── -->
+<div class="vendor-bar">
+  <div class="vendor-bar-label">Manufacturers We Represent</div>
+  <div class="vendor-bar-track">
+    <div class="vendor-bar-inner">
+      <span class="vendor-name">Krueger</span><span class="vendor-sep"></span>
+      <span class="vendor-name">United Enertech</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Twin City Fan</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Acme Engineering</span><span class="vendor-sep"></span>
+      <span class="vendor-name">RenewAire</span><span class="vendor-sep"></span>
+      <span class="vendor-name">CaptiveAire</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Sterling HVAC</span><span class="vendor-sep"></span>
+      <span class="vendor-name">SpaceRay</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Acudor</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Ruskin</span><span class="vendor-sep"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="vendor-name">Krueger</span><span class="vendor-sep"></span>
+      <span class="vendor-name">United Enertech</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Twin City Fan</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Acme Engineering</span><span class="vendor-sep"></span>
+      <span class="vendor-name">RenewAire</span><span class="vendor-sep"></span>
+      <span class="vendor-name">CaptiveAire</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Sterling HVAC</span><span class="vendor-sep"></span>
+      <span class="vendor-name">SpaceRay</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Acudor</span><span class="vendor-sep"></span>
+      <span class="vendor-name">Ruskin</span><span class="vendor-sep"></span>
     </div>
   </div>
 </div>
@@ -1158,6 +1223,27 @@
     </div>
   </div>
 </section>
+
+<!-- ─── STATS BAR ─── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">13+</div>
+      <div class="stat-label">Years Serving Contractors</div>
+      <div class="stat-desc">Georgia HVAC heritage since 2013</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2,000+</div>
+      <div class="stat-label">Quotes Per Year</div>
+      <div class="stat-desc">Active across Metro Atlanta &amp; Southeast</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">12</div>
+      <div class="stat-label">Dedicated Sales Representatives</div>
+      <div class="stat-desc">Air-side specialists, not generalists</div>
+    </div>
+  </div>
+</div>
 
 <!-- ─── OUR PRODUCTS ─── -->
 <section class="section" id="products">
