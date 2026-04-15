@@ -509,6 +509,79 @@
       line-height: 1.55;
     }
 
+    /* ─── OUR PRODUCTS ─── */
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gray-mid);
+      border: 2px solid var(--gray-mid);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .prod-card {
+      background: var(--white);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .prod-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--blue);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .prod-card:hover { background: var(--gray-light); }
+    .prod-card:hover::before { opacity: 1; }
+    .prod-card-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .prod-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      color: var(--dark);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+    .prod-card-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .prod-card-items li {
+      font-size: 13px;
+      color: #5a6a80;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.4;
+    }
+    .prod-card-items li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 1px;
+      background: var(--blue);
+    }
+    @media (max-width: 768px) {
+      .prod-grid { grid-template-columns: 1fr; }
+    }
+
     /* ─── LINES ─── */
     .lines-grid {
       display: grid;
@@ -843,6 +916,7 @@
     <ul class="nav-links">
       <li><a href="#services">What We Do</a></li>
       <li><a href="#markets">Markets</a></li>
+      <li><a href="#products">Products</a></li>
       <li><a href="#lines">Our Lines</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -865,6 +939,7 @@
   <ul>
     <li><a href="#services" class="mobile-nav-link">What We Do</a></li>
     <li><a href="#markets" class="mobile-nav-link">Markets</a></li>
+    <li><a href="#products" class="mobile-nav-link">Products</a></li>
     <li><a href="#lines" class="mobile-nav-link">Our Lines</a></li>
     <li><a href="#why" class="mobile-nav-link">About</a></li>
     <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
@@ -1080,6 +1155,90 @@
         <h3>Industrial & Warehouse</h3>
         <p>Make-up air units, gas infrared heaters, HVLS fans, industrial ventilation. We carry the lines and the technical knowledge for industrial heating and air applications.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OUR PRODUCTS ─── -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-eyebrow">Our Products</div>
+    <h2 class="section-title">Air-Side, <span class="accent">Top to Bottom</span></h2>
+    <p class="section-desc">We represent manufacturer lines across every major air-side category, with the technical depth to support plan-spec and design-assist projects from submittal through closeout.</p>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <div class="prod-card-num">01</div>
+        <div class="prod-card-title">Air Distribution</div>
+        <ul class="prod-card-items">
+          <li>Supply registers &amp; return grilles</li>
+          <li>Ceiling &amp; linear slot diffusers</li>
+          <li>Variable volume diffusers</li>
+          <li>T-bar lay-ins &amp; plenums</li>
+          <li>Linear bar &amp; architectural grilles</li>
+        </ul>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-card-num">02</div>
+        <div class="prod-card-title">Louvers &amp; Dampers</div>
+        <ul class="prod-card-items">
+          <li>Fire &amp; smoke dampers</li>
+          <li>Control &amp; volume dampers</li>
+          <li>Backdraft &amp; pressure relief dampers</li>
+          <li>Architectural &amp; weatherproof louvers</li>
+          <li>Roof &amp; wall caps</li>
+        </ul>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-card-num">03</div>
+        <div class="prod-card-title">Fans</div>
+        <ul class="prod-card-items">
+          <li>Centrifugal &amp; plenum supply fans</li>
+          <li>Cabinet &amp; inline mixed-flow fans</li>
+          <li>Rooftop exhaust &amp; utility fans</li>
+          <li>HVLS &amp; large-diameter ceiling fans</li>
+          <li>Dryer booster &amp; parking garage fans</li>
+        </ul>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-card-num">04</div>
+        <div class="prod-card-title">Access Doors</div>
+        <ul class="prod-card-items">
+          <li>Fire-rated access doors</li>
+          <li>Universal &amp; drywall bead</li>
+          <li>Insulated &amp; acoustical</li>
+          <li>Duct board &amp; round duct</li>
+          <li>Plastic &amp; sheet metal</li>
+        </ul>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-card-num">05</div>
+        <div class="prod-card-title">Terminal Units &amp; Heating</div>
+        <ul class="prod-card-items">
+          <li>Fan coil units &amp; PTACs</li>
+          <li>Air terminal units &amp; VAV boxes</li>
+          <li>Electric unit heaters</li>
+          <li>Gas-fired &amp; infrared heaters</li>
+          <li>Make-up air units</li>
+        </ul>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-card-num">06</div>
+        <div class="prod-card-title">Indoor Air Quality</div>
+        <ul class="prod-card-items">
+          <li>Pleated, bag &amp; HEPA filters</li>
+          <li>Air cleaners &amp; UV purifiers</li>
+          <li>Dehumidifiers</li>
+          <li>ERVs &amp; energy recovery ventilators</li>
+          <li>Gas detection systems</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
