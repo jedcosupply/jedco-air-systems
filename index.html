@@ -424,7 +424,7 @@
 
     /* ─── STATS BAR ─── */
     .stats-bar {
-      background: var(--dark);
+      background: var(--blue);
       padding: 0;
     }
     .stats-inner {
@@ -820,6 +820,56 @@
       margin-top: 4px;
     }
 
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 560px;
+      width: 100%;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--dark);
+      opacity: 0.4;
+      transition: opacity 0.2s;
+    }
+    .modal-close:hover { opacity: 1; }
+    .modal-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      color: var(--dark);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .modal-subtitle {
+      font-size: 14px;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+
     /* ─── FOOTER ─── */
     .footer {
       background: var(--dark);
@@ -1022,7 +1072,7 @@
         Commercial HVAC manufacturer's representative for Metro Atlanta and the Southeast specializing in air distribution, air control, fans &amp; heating, and ventilation &amp; IAQ.
       </p>
       <div class="hero-ctas">
-        <a href="#lines" class="btn btn-red">View Our Lines</a>
+        <button onclick="openLineCardModal()" class="btn btn-red">Get Our Line Card</button>
         <a href="#contact" class="btn btn-outline-white">Contact Us</a>
       </div>
     </div>
@@ -1325,7 +1375,7 @@
 
     </div>
     <div style="margin-top: 36px; text-align: center;">
-      <a href="#contact" class="btn btn-red">Request Full Line Card</a>
+      <button onclick="openLineCardModal()" class="btn btn-red">Request Full Line Card</button>
     </div>
   </div>
 </section>
@@ -1509,5 +1559,47 @@
     });
   });
 </script>
+<!-- ─── LINE CARD MODAL ─── -->
+<div class="modal-overlay" id="lineCardModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeLineCardModal()" aria-label="Close">&times;</button>
+    <div class="modal-title" id="modalTitle">Request Our Full Line Card</div>
+    <div class="modal-subtitle">We'll send over our complete manufacturer line list.</div>
+    <div id="hubspot-line-card-form"></div>
+  </div>
+</div>
+
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  var lineCardFormLoaded = false;
+
+  function openLineCardModal() {
+    document.getElementById('lineCardModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (!lineCardFormLoaded) {
+      hbspt.forms.create({
+        portalId: "45626072",
+        formId: "4e134b7a-66a6-4c2e-b8b2-8af919e88739",
+        region: "na1",
+        target: "#hubspot-line-card-form"
+      });
+      lineCardFormLoaded = true;
+    }
+  }
+
+  function closeLineCardModal() {
+    document.getElementById('lineCardModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lineCardModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLineCardModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLineCardModal();
+  });
+</script>
+
 </body>
 </html>
