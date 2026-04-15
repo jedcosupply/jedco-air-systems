@@ -820,52 +820,42 @@
       margin-top: 4px;
     }
 
-    /* HubSpot form overrides — dark theme */
-    .contact-form .hs-form-frame,
-    /* HubSpot contact form overrides */
-    #hubspot-contact-form .hs-form fieldset { max-width: 100%; }
-    #hubspot-contact-form .hs-input {
-      width: 100% !important;
-      background: rgba(255,255,255,0.07) !important;
-      border: 1px solid rgba(255,255,255,0.14) !important;
-      border-radius: 4px !important;
-      padding: 10px 13px !important;
-      font-size: 14px !important;
-      color: #ffffff !important;
-      font-family: 'Inter', sans-serif !important;
-      box-shadow: none !important;
+    /* ─── CONTACT FORM ─── */
+    #contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .cf-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .cf-field { display: flex; flex-direction: column; gap: 7px; }
+    .cf-field label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+      font-family: 'Inter', sans-serif;
     }
-    #hubspot-contact-form .hs-input:focus { border-color: #1B4F91 !important; outline: none !important; box-shadow: none !important; }
-    #hubspot-contact-form .hs-input::placeholder { color: rgba(255,255,255,0.25) !important; }
-    #hubspot-contact-form textarea.hs-input { height: 96px !important; resize: vertical !important; }
-    #hubspot-contact-form .hs-form-field label {
-      display: block !important;
-      font-size: 11px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.1em !important;
-      text-transform: uppercase !important;
-      color: rgba(255,255,255,0.5) !important;
-      margin-bottom: 7px !important;
-      font-family: 'Inter', sans-serif !important;
+    .cf-req { color: var(--red); }
+    .cf-field input,
+    .cf-field textarea {
+      width: 100%; background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14); border-radius: 4px;
+      padding: 10px 13px; font-size: 14px; color: #ffffff;
+      font-family: 'Inter', sans-serif; box-sizing: border-box;
+      transition: border-color 0.2s;
     }
-    #hubspot-contact-form .hs-form-field { margin-bottom: 16px !important; }
-    #hubspot-contact-form .hs-error-msgs { list-style: none !important; margin-top: 4px !important; padding: 0 !important; }
-    #hubspot-contact-form .hs-error-msgs label { color: #e05055 !important; font-size: 11px !important; letter-spacing: 0 !important; text-transform: none !important; }
-    #hubspot-contact-form .hs-button {
-      width: 100% !important;
-      background: #C8272D !important;
-      color: #ffffff !important;
-      border: 2px solid #C8272D !important;
-      border-radius: 4px !important;
-      padding: 13px !important;
-      font-size: 14.5px !important;
-      font-weight: 600 !important;
-      font-family: 'Inter', sans-serif !important;
-      cursor: pointer !important;
-      transition: background 0.2s, border-color 0.2s !important;
-      margin-top: 4px !important;
+    .cf-field input:focus,
+    .cf-field textarea:focus { border-color: var(--blue); outline: none; }
+    .cf-field input::placeholder,
+    .cf-field textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .cf-field textarea { height: 100px; resize: vertical; }
+    .cf-submit {
+      width: 100%; background: var(--red); color: #fff;
+      border: 2px solid var(--red); border-radius: 4px;
+      padding: 13px; font-size: 14.5px; font-weight: 600;
+      font-family: 'Inter', sans-serif; cursor: pointer;
+      transition: background 0.2s, border-color 0.2s; margin-top: 4px;
     }
-    #hubspot-contact-form .hs-button:hover { background: #A51E23 !important; border-color: #A51E23 !important; }
+    .cf-submit:hover:not(:disabled) { background: #A51E23; border-color: #A51E23; }
+    .cf-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    #cf-status { font-size: 13px; text-align: center; min-height: 20px; }
+    .cf-success { color: #4caf82; }
+    .cf-error { color: #e05055; }
+    @media (max-width: 560px) { .cf-row-2 { grid-template-columns: 1fr; } }
 
     /* ─── MODAL ─── */
     .modal-overlay {
@@ -1535,7 +1525,36 @@
 
       <div class="contact-form">
         <div class="form-title">Tell Us About the Job</div>
-        <div id="hubspot-contact-form"></div>
+        <form id="contact-form" novalidate>
+          <div class="cf-row-2">
+            <div class="cf-field">
+              <label for="cf-firstname">First Name <span class="cf-req">*</span></label>
+              <input type="text" id="cf-firstname" name="firstname" placeholder="Jane" required>
+            </div>
+            <div class="cf-field">
+              <label for="cf-lastname">Last Name <span class="cf-req">*</span></label>
+              <input type="text" id="cf-lastname" name="lastname" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="cf-field">
+            <label for="cf-company">Company <span class="cf-req">*</span></label>
+            <input type="text" id="cf-company" name="company" placeholder="Acme HVAC" required>
+          </div>
+          <div class="cf-field">
+            <label for="cf-email">Email <span class="cf-req">*</span></label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@acmehvac.com" required>
+          </div>
+          <div class="cf-field">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="(555) 000-0000">
+          </div>
+          <div class="cf-field">
+            <label for="cf-message">Message <span class="cf-req">*</span></label>
+            <textarea id="cf-message" name="content" placeholder="Tell us about your project or what you're looking for..." required></textarea>
+          </div>
+          <button type="submit" class="cf-submit">Send Message</button>
+          <div id="cf-status"></div>
+        </form>
       </div>
 
     </div>
@@ -1588,12 +1607,59 @@
 </div>
 
 <script>
-  // Contact form
-  hbspt.forms.create({
-    region: "na1",
-    portalId: "45626072",
-    formId: "a28d5e8e-57b2-478f-8f0d-29a88f34bc9a",
-    target: "#hubspot-contact-form"
+  // Contact form — submits directly to HubSpot Submissions API
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.cf-submit');
+    const status = document.getElementById('cf-status');
+
+    // Basic validation
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(el => { if (!el.value.trim()) valid = false; });
+    if (!valid) {
+      status.innerHTML = '<span class="cf-error">Please fill in all required fields.</span>';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+
+    const fields = [
+      { name: 'firstname', value: form.firstname.value.trim() },
+      { name: 'lastname',  value: form.lastname.value.trim()  },
+      { name: 'company',   value: form.company.value.trim()   },
+      { name: 'email',     value: form.email.value.trim()     },
+      { name: 'phone',     value: form.phone.value.trim()     },
+      { name: 'content',   value: form.content.value.trim()   }
+    ];
+
+    try {
+      const res = await fetch(
+        'https://api.hsforms.com/submissions/v3/integration/submit/45626072/a28d5e8e-57b2-478f-8f0d-29a88f34bc9a',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields,
+            context: { pageUri: window.location.href, pageName: 'JEDCO Air Systems' }
+          })
+        }
+      );
+      if (res.ok) {
+        status.innerHTML = '<span class="cf-success">Thanks! We\'ll be in touch shortly.</span>';
+        form.reset();
+      } else {
+        status.innerHTML = '<span class="cf-error">Something went wrong. Please try again or email us directly.</span>';
+      }
+    } catch (err) {
+      status.innerHTML = '<span class="cf-error">Something went wrong. Please try again or email us directly.</span>';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
   });
 
   var lineCardFormLoaded = false;
