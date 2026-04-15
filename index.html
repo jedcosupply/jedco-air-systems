@@ -1652,10 +1652,14 @@
         status.innerHTML = '<span class="cf-success">Thanks! We\'ll be in touch shortly.</span>';
         form.reset();
       } else {
-        status.innerHTML = '<span class="cf-error">Something went wrong. Please try again or email us directly.</span>';
+        const errData = await res.json().catch(() => ({}));
+        console.error('HubSpot error:', res.status, errData);
+        const msg = errData?.errors?.[0]?.message || errData?.message || JSON.stringify(errData);
+        status.innerHTML = `<span class="cf-error">Error ${res.status}: ${msg}</span>`;
       }
     } catch (err) {
-      status.innerHTML = '<span class="cf-error">Something went wrong. Please try again or email us directly.</span>';
+      console.error('Fetch error:', err);
+      status.innerHTML = `<span class="cf-error">Network error: ${err.message}</span>`;
     }
 
     btn.disabled = false;
