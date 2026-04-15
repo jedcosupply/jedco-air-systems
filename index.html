@@ -147,8 +147,8 @@
       align-items: center;
       gap: 32px;
     }
-    .nav-logo { display: flex; align-items: stretch; gap: 10px; text-decoration: none; }
-    .nav-logo img { width: auto; height: 100%; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: auto; height: 44px; display: block; }
     .nav-logo-text { display: flex; flex-direction: column; justify-content: center; gap: 1px; line-height: 1; }
     .nav-logo-text .logo-jedco { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px; color: var(--blue); letter-spacing: 0.03em; }
     .nav-logo-text .logo-sub { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 12px; color: var(--dark); letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap; }
@@ -1019,15 +1019,14 @@
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
       .nav-links { display: none; }
+      .nav-supply-link { display: none; }
       .services-grid { grid-template-columns: 1fr; }
       .markets-grid { grid-template-columns: 1fr 1fr; }
       .lines-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
-      .stats-inner {
-        grid-template-columns: 1fr;
-      }
+      .stats-inner { grid-template-columns: 1fr; }
       .stat-item {
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -1035,13 +1034,23 @@
       }
       .stat-item:last-child { border-bottom: none; }
       .footer-inner { flex-direction: column; text-align: center; gap: 8px; }
-      .hero { padding: 64px 0 60px; }
-      .section { padding: 60px 0; }
+      .hero { padding: 56px 0 52px; }
+      .section { padding: 52px 0; }
+      .section-title { font-size: 28px; }
+      .hero-headline { font-size: 48px; }
+      .hero-sub { font-size: 15px; }
+      .vendor-bar { padding: 14px 0; }
+      .why-item { flex-direction: column; gap: 10px; }
     }
 
     @media (max-width: 480px) {
       .markets-grid { grid-template-columns: 1fr; }
       .lines-grid { grid-template-columns: 1fr 1fr; }
+      .nav-logo img { height: 36px; }
+      .nav-logo-text .logo-jedco { font-size: 20px; }
+      .nav-logo-text .logo-sub { font-size: 10px; }
+      .hero-headline { font-size: 40px; }
+      .cf-row-2 { grid-template-columns: 1fr; }
     }
   </style>
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
