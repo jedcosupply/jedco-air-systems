@@ -103,31 +103,31 @@ const html = `<!DOCTYPE html>
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
-    padding: 28px 26px;
-    display: flex; flex-direction: column; gap: 18px;
+    padding: 28px 30px;
+    display: flex; flex-direction: column; justify-content: space-between;
   }
   .panel-label {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700; font-size: 13px;
     letter-spacing: 0.2em; text-transform: uppercase;
     color: rgba(255,255,255,0.4);
-    margin-bottom: 4px;
   }
-  .category { display: flex; align-items: flex-start; gap: 12px; }
+  .categories { display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-top: 20px; }
+  .category { display: flex; align-items: flex-start; gap: 14px; }
   .cat-bullet {
-    width: 8px; height: 8px; border-radius: 2px;
-    background: #C8272D; flex-shrink: 0; margin-top: 5px;
+    width: 10px; height: 10px; border-radius: 2px;
+    background: #C8272D; flex-shrink: 0; margin-top: 6px;
   }
-  .cat-body { display: flex; flex-direction: column; gap: 2px; }
+  .cat-body { display: flex; flex-direction: column; gap: 4px; }
   .cat-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 18px;
+    font-weight: 700; font-size: 22px;
     color: #ffffff; text-transform: uppercase;
     letter-spacing: 0.04em; line-height: 1;
   }
   .cat-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 12px; color: rgba(255,255,255,0.45);
+    font-size: 13px; color: rgba(255,255,255,0.45);
     line-height: 1.4;
   }
 
@@ -169,35 +169,37 @@ const html = `<!DOCTYPE html>
       <div class="right-panel">
         <div class="panel-label">What We Rep</div>
 
-        <div class="category">
-          <div class="cat-bullet"></div>
-          <div class="cat-body">
-            <div class="cat-title">Air Distribution</div>
-            <div class="cat-desc">Registers, diffusers, terminal units</div>
+        <div class="categories">
+          <div class="category">
+            <div class="cat-bullet"></div>
+            <div class="cat-body">
+              <div class="cat-title">Air Distribution</div>
+              <div class="cat-desc">Registers, diffusers, terminal units</div>
+            </div>
           </div>
-        </div>
 
-        <div class="category">
-          <div class="cat-bullet"></div>
-          <div class="cat-body">
-            <div class="cat-title">Air Control</div>
-            <div class="cat-desc">Dampers, louvers, access doors</div>
+          <div class="category">
+            <div class="cat-bullet"></div>
+            <div class="cat-body">
+              <div class="cat-title">Air Control</div>
+              <div class="cat-desc">Dampers, louvers, access doors</div>
+            </div>
           </div>
-        </div>
 
-        <div class="category">
-          <div class="cat-bullet"></div>
-          <div class="cat-body">
-            <div class="cat-title">Fans &amp; Heating</div>
-            <div class="cat-desc">Cabinet fans, unit heaters, make-up air</div>
+          <div class="category">
+            <div class="cat-bullet"></div>
+            <div class="cat-body">
+              <div class="cat-title">Fans &amp; Heating</div>
+              <div class="cat-desc">Cabinet fans, unit heaters, make-up air</div>
+            </div>
           </div>
-        </div>
 
-        <div class="category">
-          <div class="cat-bullet"></div>
-          <div class="cat-body">
-            <div class="cat-title">Ventilation &amp; IAQ</div>
-            <div class="cat-desc">ERVs, filtration, dehumidification</div>
+          <div class="category">
+            <div class="cat-bullet"></div>
+            <div class="cat-body">
+              <div class="cat-title">Ventilation &amp; IAQ</div>
+              <div class="cat-desc">ERVs, filtration, dehumidification</div>
+            </div>
           </div>
         </div>
       </div>
