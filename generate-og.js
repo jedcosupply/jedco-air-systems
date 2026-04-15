@@ -1,7 +1,9 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
+const fs = require('fs');
 
-const SVG_PATH = path.resolve(__dirname, 'JedTriangleNew.svg');
+const svgBuffer = fs.readFileSync(path.resolve(__dirname, 'JedTriangleNew.svg'));
+const SVG_DATA_URI = 'data:image/svg+xml;base64,' + svgBuffer.toString('base64');
 
 const html = `<!DOCTYPE html>
 <html>
@@ -147,7 +149,7 @@ const html = `<!DOCTYPE html>
     <!-- LEFT -->
     <div class="left-col">
       <div class="logo-row">
-        <img src="file://${SVG_PATH}" alt="JEDCO">
+        <img src="${SVG_DATA_URI}" alt="JEDCO">
         <div class="logo-text">
           <span class="logo-jedco">JEDCO</span>
           <span class="logo-sub">Air Systems</span>
