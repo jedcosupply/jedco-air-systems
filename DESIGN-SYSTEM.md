@@ -46,10 +46,10 @@ All tokens are defined as CSS custom properties on `:root`.
 ```css
 :root {
   /* Brand primaries */
-  --red:        #C8272D;
-  --red-dark:   #A51E23;
-  --blue:       #1B4F91;
-  --blue-dark:  #143D72;
+  --red:        #BB141B;
+  --red-dark:   #9A0F15;
+  --blue:       #0C4CA3;
+  --blue-dark:  #093B80;
 
   /* Backgrounds */
   --dark:       #0C1A28;   /* hero, footer, dark sections */
@@ -74,10 +74,10 @@ All tokens are defined as CSS custom properties on `:root`.
 
 | Token | Hex | Usage |
 |---|---|---|
-| `--red` | `#C8272D` | CTAs, accents, eyebrows, icon backgrounds, hero badge, vendor separators |
-| `--red-dark` | `#A51E23` | Red button hover state |
-| `--blue` | `#1B4F91` | Nav logo, vendor bar bg, stats bar bg, section accents, numbered circles |
-| `--blue-dark` | `#143D72` | Blue button hover state |
+| `--red` | `#BB141B` | CTAs, accents, eyebrows, icon backgrounds, hero badge, vendor separators |
+| `--red-dark` | `#9A0F15` | Red button hover state |
+| `--blue` | `#0C4CA3` | Nav logo, vendor bar bg, stats bar bg, section accents, numbered circles |
+| `--blue-dark` | `#093B80` | Blue button hover state |
 
 ### Backgrounds
 
@@ -137,13 +137,13 @@ These are all inline (not tokenized). Grouped by context for reference.
 
 | Value | Usage |
 |---|---|
-| `rgba(200,39,45,0.05)` | Hero right gradient accent |
-| `rgba(200,39,45,0.09)` | Service icon background |
-| `rgba(200,39,45,0.1)` | Market card hover bg |
-| `rgba(200,39,45,0.15)` | Hero panel icon bg |
-| `rgba(200,39,45,0.35)` | Market card hover border |
-| `rgba(27,79,145,0.09)` | Hero right gradient accent |
-| `rgba(27,79,145,0.1)` | Line card hover shadow |
+| `rgba(187,20,27,0.05)` | Hero right gradient accent |
+| `rgba(187,20,27,0.09)` | Service icon background |
+| `rgba(187,20,27,0.1)` | Market card hover bg |
+| `rgba(187,20,27,0.15)` | Hero panel icon bg |
+| `rgba(187,20,27,0.35)` | Market card hover border |
+| `rgba(12,76,163,0.09)` | Hero right gradient accent |
+| `rgba(12,76,163,0.1)` | Line card hover shadow |
 
 **Other:**
 
@@ -156,9 +156,9 @@ These are all inline (not tokenized). Grouped by context for reference.
 
 | Name | Value | Usage |
 |---|---|---|
-| Top stripe | `linear-gradient(90deg, #C8272D 0%, #C8272D 40%, #1B4F91 60%, #1B4F91 100%)` | 4px bar at top of page |
-| Section divider | `linear-gradient(90deg, #C8272D 0%, #1B4F91 100%)` | 3px divider between Why and Contact sections |
-| Hero accent | `linear-gradient(135deg, transparent 30%, rgba(200,39,45,0.05) 60%, rgba(27,79,145,0.09) 100%)` | Subtle overlay on hero right side |
+| Top stripe | `linear-gradient(90deg, #BB141B 0%, #BB141B 40%, #0C4CA3 60%, #0C4CA3 100%)` | 4px bar at top of page |
+| Section divider | `linear-gradient(90deg, #BB141B 0%, #0C4CA3 100%)` | 3px divider between Why and Contact sections |
+| Hero accent | `linear-gradient(135deg, transparent 30%, rgba(187,20,27,0.05) 60%, rgba(12,76,163,0.09) 100%)` | Subtle overlay on hero right side |
 
 ---
 
@@ -371,7 +371,7 @@ body {
 | Form inputs (default) | `1px solid rgba(255,255,255,0.14)` |
 | Form inputs (focus) | `1px solid var(--blue)` |
 | Market card (default) | `1px solid rgba(255,255,255,0.1)` |
-| Market card (hover) | `1px solid rgba(200,39,45,0.35)` |
+| Market card (hover) | `1px solid rgba(187,20,27,0.35)` |
 | Vendor bar (bottom) | `1px solid rgba(255,255,255,0.1)` |
 | Vendor bar label (right) | `1px solid rgba(255,255,255,0.1)` |
 | Stats bar item dividers | `1px solid rgba(255,255,255,0.15)` (not last-child) |
@@ -396,7 +396,7 @@ Only used on hover states — no persistent shadows anywhere.
 | Element | Shadow |
 |---|---|
 | Service card (hover) | `0 10px 36px rgba(0,0,0,0.09)` |
-| Line card (hover) | `0 3px 14px rgba(27,79,145,0.1)` |
+| Line card (hover) | `0 3px 14px rgba(12,76,163,0.1)` |
 
 ---
 
@@ -574,7 +574,7 @@ color: var(--red);  /* or #e05055 on dark sections */
 
 - White bg, `border-radius: 6px`, `1px solid var(--gray-mid)`, `3px solid var(--red)` top accent
 - Padding: `34px 30px`
-- Icon in `rgba(200,39,45,0.09)` rounded square (`8px`)
+- Icon in `rgba(187,20,27,0.09)` rounded square (`8px`)
 - H3: Barlow Condensed 20px/800/uppercase
 - Paragraph: Inter 14.5px/500, line-height 1.65, color `--text-mid`
 - Hover: `translateY(-4px)` + `0 10px 36px rgba(0,0,0,0.09)` shadow
@@ -586,7 +586,7 @@ color: var(--red);  /* or #e05055 on dark sections */
 - Icon in circle (`50%`), `rgba(255,255,255,0.07)` bg, SVG at `rgba(255,255,255,0.8)`
 - H3: Barlow Condensed 17px/800/uppercase/letter-spacing 0.04em
 - Paragraph: Inter 13px/400, line-height 1.55
-- Hover: bg `rgba(200,39,45,0.1)`, border `rgba(200,39,45,0.35)`
+- Hover: bg `rgba(187,20,27,0.1)`, border `rgba(187,20,27,0.35)`
 
 ### Product Card
 
@@ -603,7 +603,7 @@ color: var(--red);  /* or #e05055 on dark sections */
 - White bg, `border-radius: 6px`, `1px solid var(--gray-mid)`, padding `14px`
 - Name: Inter 13.5px/700
 - Products list: Inter 11px/400/line-height 1.4
-- Hover: border → `var(--blue)`, shadow `0 3px 14px rgba(27,79,145,0.1)`
+- Hover: border → `var(--blue)`, shadow `0 3px 14px rgba(12,76,163,0.1)`
 
 ### Why JEDCO Item
 
