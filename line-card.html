@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Line Card — JEDCO Air Systems</title>
+<meta name="description" content="JEDCO Air Systems manufacturer line card. Browse 50+ commercial HVAC manufacturers including registers, grilles, fans, dampers, IAQ, and more.">
+<link rel="icon" type="image/svg+xml" href="JedTriangleNew.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NM9DKVW9');</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:        #C8272D;
+  --red-dark:   #A51E23;
+  --red-soft:   #e05055;
+  --blue:       #1B4F91;
+  --blue-dark:  #143D72;
+  --dark:       #0C1A28;
+  --dark-2:     #112236;
+  --gray-light: #F4F6F9;
+  --gray-mid:   #DDE2EC;
+  --gray-line:  #EAEEF3;
+  --text:       #1A202C;
+  --muted:      #4A5568;
+  --soft:       #718096;
+  --hover-shadow: 0 10px 36px rgba(0,0,0,0.09);
+}
+
+html, body { height: 100%; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--gray-light);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ── TOP STRIPE ── */
+.top-stripe {
+  height: 4px;
+  background: linear-gradient(90deg, var(--red) 0%, var(--red) 40%, var(--blue) 60%, var(--blue) 100%);
+  flex-shrink: 0;
+}
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: var(--dark);
+  height: 62px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 50;
+}
+.page-header::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.page-header-inner {
+  height: 100%;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Brand / Logo */
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+.brand img { height: 34px; width: auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+.brand-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800; font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+.brand-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 10px;
+  color: var(--red-soft);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.header-cta {
+  padding: 8px 18px;
+  background: var(--red); color: #fff;
+  border: 2px solid var(--red);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.header-cta:hover { background: var(--red-dark); border-color: var(--red-dark); }
+
+/* ── APP LAYOUT ── */
+.app-shell {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 0;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background: #fff;
+  border-right: 1px solid var(--gray-mid);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: calc(100vh - 66px);
+  overflow-y: auto;
+}
+.sidebar-section + .sidebar-section { margin-top: 24px; }
+.sidebar-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--soft);
+  padding: 0 20px 10px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.sidebar-label::before {
+  content: ''; width: 18px; height: 2px; background: var(--red);
+}
+.cat-list { list-style: none; }
+.cat-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 13.5px; font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+}
+.cat-item:hover { background: var(--gray-light); color: var(--red); }
+.cat-item.active {
+  background: rgba(200,39,45,0.05);
+  color: var(--red);
+  border-left-color: var(--red);
+  font-weight: 600;
+}
+.cat-count {
+  font-size: 11px; font-weight: 600;
+  background: var(--gray-light);
+  color: var(--soft);
+  border-radius: 10px;
+  padding: 2px 8px;
+  min-width: 28px; text-align: center;
+  letter-spacing: 0.02em;
+}
+.cat-item.active .cat-count { background: var(--red); color: #fff; }
+
+.sidebar-cta {
+  margin: 8px 20px 0;
+  padding: 14px 16px;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 6px;
+  border-top: 3px solid var(--red);
+}
+.sidebar-cta-eyebrow {
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+.sidebar-cta-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 18px; line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.sidebar-cta-desc {
+  font-size: 12px; color: var(--muted); line-height: 1.55;
+  margin-bottom: 12px;
+}
+.sidebar-cta-btn {
+  display: block; width: 100%;
+  padding: 9px 12px;
+  background: var(--red); color: #fff;
+  border: 2px solid var(--red);
+  border-radius: 4px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.sidebar-cta-btn:hover { background: var(--red-dark); border-color: var(--red-dark); }
+
+/* ── CONTENT ── */
+.content {
+  padding: 0;
+  min-width: 0;
+}
+
+/* Sub-toolbar */
+.sub-toolbar {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 28px;
+  background: #fff;
+  border-bottom: 1px solid var(--gray-mid);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  flex-wrap: wrap;
+}
+.toolbar-left {
+  display: flex; flex-direction: column; gap: 2px;
+  flex-shrink: 0;
+}
+.toolbar-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  color: var(--text);
+}
+.toolbar-title em { font-style: normal; color: var(--red); }
+.toolbar-meta {
+  font-size: 12px; color: var(--muted);
+  letter-spacing: 0.01em;
+}
+.toolbar-meta strong { color: var(--text); font-weight: 600; }
+
+/* Search in toolbar */
+.toolbar-search {
+  flex: 1;
+  min-width: 180px;
+  max-width: 420px;
+  position: relative;
+}
+.toolbar-search svg.search-icon {
+  position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+  color: var(--soft); pointer-events: none;
+}
+.toolbar-search input {
+  width: 100%;
+  height: 38px;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  padding: 0 36px 0 36px;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.toolbar-search input::placeholder { color: var(--soft); }
+.toolbar-search input:focus {
+  border-color: var(--blue);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(27,79,145,0.08);
+}
+.toolbar-search .clear-btn {
+  position: absolute; right: 7px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px;
+  background: var(--gray-mid);
+  border: 0;
+  border-radius: 3px;
+  color: var(--muted);
+  cursor: pointer;
+  display: none;
+  align-items: center; justify-content: center;
+  transition: background 0.15s ease;
+}
+.toolbar-search.has-value .clear-btn { display: inline-flex; }
+.toolbar-search .clear-btn:hover { background: var(--gray-mid); color: var(--text); }
+.toolbar-search .kbd {
+  position: absolute; right: 9px; top: 50%; transform: translateY(-50%);
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
+  color: var(--soft);
+  background: var(--gray-mid);
+  border-radius: 3px;
+  padding: 2px 5px;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+.toolbar-search.has-value .kbd { display: none; }
+
+.toolbar-right {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+.view-btn {
+  padding: 7px 12px;
+  background: none; border: 0;
+  cursor: pointer;
+  color: var(--soft);
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.view-btn + .view-btn { border-left: 1px solid var(--gray-mid); }
+.view-btn:hover { color: var(--text); background: var(--gray-light); }
+.view-btn.active { background: var(--dark); color: #fff; }
+
+.sort-select {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 600;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--gray-mid);
+  border-radius: 4px;
+  padding: 7px 28px 7px 10px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12' fill='none' stroke='%234A5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 5l3 3 3-3'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Body region */
+.body-region {
+  padding: 24px 28px 48px;
+}
+
+/* Active filter chip */
+.active-filter-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 18px;
+  font-size: 12px; color: var(--muted);
+  flex-wrap: wrap;
+}
+.active-filter-row .label {
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--soft); font-size: 11px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px;
+  background: rgba(200,39,45,0.07);
+  border: 1px solid rgba(200,39,45,0.2);
+  border-radius: 3px;
+  font-size: 11.5px; font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.04em;
+}
+.chip button {
+  background: none; border: 0; cursor: pointer;
+  padding: 0; line-height: 0;
+  color: var(--red); opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+.chip button:hover { opacity: 1; }
+.chip-clear-all {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  background: none; border: 0;
+  color: var(--blue);
+  cursor: pointer;
+}
+.chip-clear-all:hover { color: var(--blue-dark); text-decoration: underline; }
+
+/* Section headers */
+.section-group { margin-bottom: 36px; }
+.section-group:last-child { margin-bottom: 0; }
+.section-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 14px;
+}
+.section-line {
+  flex: 1; height: 1px; background: var(--gray-mid);
+}
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--red);
+  display: inline-flex; align-items: center; gap: 10px;
+  white-space: nowrap;
+}
+.section-label::before {
+  content: ''; width: 20px; height: 2px; background: currentColor;
+}
+.section-count {
+  font-size: 11px; font-weight: 600;
+  color: var(--soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── GRID VIEW ── */
+.mfr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+/* Manufacturer card */
+.mfr-card {
+  background: #fff;
+  border: 1px solid var(--gray-mid);
+  border-top: 3px solid var(--red);
+  border-radius: 6px;
+  padding: 18px 18px 14px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  position: relative;
+}
+.mfr-card:hover {
+  box-shadow: var(--hover-shadow);
+  border-color: rgba(200,39,45,0.4);
+  transform: translateY(-4px);
+}
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  gap: 10px;
+}
+.mfr-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.ext-icon {
+  color: var(--gray-mid);
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.mfr-card:hover .ext-icon { color: var(--red); transform: translate(2px, -2px); }
+.mfr-domain {
+  font-size: 11px; font-weight: 500;
+  color: var(--soft);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+.mfr-products {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 14px;
+}
+.mfr-products li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 3px 0 3px 14px;
+  position: relative;
+  line-height: 1.4;
+}
+.mfr-products li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 11px;
+  width: 6px; height: 1.5px;
+  background: var(--gray-mid);
+  transition: background 0.2s ease;
+}
+.mfr-card:hover .mfr-products li::before { background: var(--red); }
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-line);
+  margin-top: auto;
+}
+.card-tag {
+  font-size: 9.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--soft);
+  background: var(--gray-light);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+.visit-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--blue);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.mfr-card:hover .visit-btn { color: var(--red); gap: 8px; }
+
+/* ── LIST VIEW ── */
+.mfr-list {
+  display: none;
+  background: #fff;
+  border: 1px solid var(--gray-mid);
+  border-top: 3px solid var(--red);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.list-view .mfr-grid { display: none; }
+.list-view .mfr-list { display: block; }
+.list-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 140px 110px;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--gray-line);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+.list-row:last-child { border-bottom: 0; }
+.list-row:hover { background: var(--gray-light); }
+.list-row .row-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.list-row .row-products {
+  font-size: 13px; color: var(--muted);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  padding-right: 16px;
+}
+.list-row .row-tag {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--soft);
+  background: var(--gray-light);
+  padding: 4px 8px;
+  border-radius: 3px;
+  justify-self: start;
+}
+.list-row .row-visit {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--blue);
+  display: inline-flex; align-items: center; gap: 6px;
+  justify-self: end;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.list-row:hover .row-visit { color: var(--red); gap: 8px; }
+.list-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 140px 110px;
+  padding: 10px 16px;
+  background: var(--gray-light);
+  border-bottom: 1px solid var(--gray-mid);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--soft);
+}
+.list-header div:last-child { text-align: right; }
+
+/* Hidden state */
+.mfr-card.hidden, .list-row.hidden { display: none; }
+.section-group.all-hidden { display: none; }
+
+/* ── ADDITIONAL PRODUCTS BAND ── */
+.additional-band {
+  margin-top: 36px;
+  background: var(--dark);
+  border-radius: 8px;
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.additional-band::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.additional-inner { position: relative; z-index: 1; }
+.additional-title {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--red-soft);
+  margin-bottom: 12px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.additional-title::before {
+  content: ''; width: 20px; height: 2px; background: currentColor;
+}
+.additional-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  line-height: 1.05;
+}
+.additional-heading em { font-style: normal; color: var(--red); }
+.additional-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.additional-item {
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.additional-item:hover {
+  background: rgba(200,39,45,0.12);
+  color: #fff;
+  border-color: rgba(200,39,45,0.3);
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 80px 24px;
+  background: #fff;
+  border: 1px solid var(--gray-mid);
+  border-radius: 6px;
+  display: none;
+}
+.no-results.show { display: block; }
+.no-results-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 80px; font-weight: 900;
+  color: var(--gray-mid);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.no-results-text { font-size: 15px; color: var(--muted); }
+.no-results-text strong { color: var(--text); }
+.no-results-clear {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 22px;
+  background: var(--red); color: #fff;
+  border: 2px solid var(--red);
+  border-radius: 4px;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-decoration: none;
+}
+.no-results-clear:hover { background: var(--red-dark); border-color: var(--red-dark); }
+
+/* ── FOOTER ── */
+.app-footer {
+  background: var(--dark);
+  padding: 16px 28px;
+  display: flex; align-items: center; gap: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.app-footer .left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.app-footer a { color: rgba(255,255,255,0.85); transition: color 0.2s ease; }
+.app-footer a:hover { color: #fff; }
+.app-footer .sep { color: rgba(255,255,255,0.2); }
+.app-footer .right { margin-left: auto; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 980px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static; height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--gray-mid);
+    padding: 14px 0;
+  }
+  .cat-list {
+    display: flex; gap: 0; overflow-x: auto;
+    padding: 0 12px;
+    scrollbar-width: none;
+  }
+  .cat-list::-webkit-scrollbar { display: none; }
+  .cat-item {
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+    padding: 8px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cat-item.active {
+    border-left: 0;
+    border-bottom-color: var(--red);
+  }
+  .sidebar-section + .sidebar-section { margin-top: 12px; }
+  .sidebar-cta { display: none; }
+  .sidebar-label { padding: 0 20px 6px; }
+  .list-row, .list-header { grid-template-columns: 1fr; }
+  .list-row .row-products, .list-row .row-tag,
+  .list-header div:nth-child(2), .list-header div:nth-child(3) { display: none; }
+  .list-header { display: none; }
+  .list-row .row-visit { justify-self: start; margin-top: 4px; }
+}
+@media (max-width: 720px) {
+  .page-header-inner { padding: 0 16px; }
+  .toolbar-search { min-width: 0; }
+  .sort-select { display: none; }
+  .body-region { padding: 16px; }
+  .sub-toolbar { padding: 12px 16px; gap: 10px; }
+  .toolbar-title { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NM9DKVW9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="top-stripe"></div>
+
+<!-- PAGE HEADER: logo only -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <a class="brand" href="/">
+      <img src="JedTriangleNew.svg" alt="JEDCO Air Systems">
+      <div class="brand-text">
+        <div class="brand-name">JEDCO</div>
+        <div class="brand-sub">Air Systems</div>
+      </div>
+    </a>
+    <a class="header-cta" href="mailto:sales@jedcoairsystems.com?subject=Quote Request">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Request a Quote
+    </a>
+  </div>
+</header>
+
+<!-- APP SHELL -->
+<div class="app-shell">
+
+  <!-- SIDEBAR: categories -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Categories</div>
+      <ul class="cat-list" id="catList"></ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-cta">
+        <div class="sidebar-cta-eyebrow">Need Help?</div>
+        <div class="sidebar-cta-title">Don't see what you need?</div>
+        <div class="sidebar-cta-desc">If it's air-side, we probably quote it. Ask the rep that picks up the phone.</div>
+        <a class="sidebar-cta-btn" href="tel:6786082858">Call 678-608-2858</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- Sub-toolbar: title, search, sort, view -->
+    <div class="sub-toolbar">
+      <div class="toolbar-left">
+        <div class="toolbar-title" id="toolbarTitle">All <em>Manufacturers</em></div>
+        <div class="toolbar-meta">Showing <strong id="visibleCount">50</strong> of <strong id="totalCountInline">50</strong> lines</div>
+      </div>
+
+      <div class="toolbar-search" id="searchWrap">
+        <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input id="searchInput" type="text" placeholder="Search manufacturers or products…" oninput="onSearch(this.value)">
+        <button class="clear-btn" onclick="clearSearch()" aria-label="Clear search">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <span class="kbd">/</span>
+      </div>
+
+      <div class="toolbar-right">
+        <select class="sort-select" id="sortSelect" onchange="onSort(this.value)">
+          <option value="curated">Primary First</option>
+          <option value="alpha">A → Z</option>
+          <option value="alpha-desc">Z → A</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="grid" onclick="setView('grid')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Grid
+          </button>
+          <button class="view-btn" data-view="list" onclick="setView('list')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            List
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body region -->
+    <div class="body-region" id="bodyRegion">
+
+      <div class="active-filter-row" id="activeFilterRow" style="display:none;">
+        <span class="label">Filtering by:</span>
+        <span id="activeChips"></span>
+        <button class="chip-clear-all" onclick="clearAll()">Clear All</button>
+      </div>
+
+      <!-- PRIMARY -->
+      <div class="section-group" id="group-primary">
+        <div class="section-header">
+          <div class="section-label">Primary Lines</div>
+          <div class="section-line"></div>
+          <div class="section-count" id="primaryCount"></div>
+        </div>
+        <div class="mfr-grid" id="grid-primary"></div>
+        <div class="mfr-list" id="list-primary">
+          <div class="list-header">
+            <div>Manufacturer</div><div>Products</div><div>Category</div><div></div>
+          </div>
+          <div id="list-primary-rows"></div>
+        </div>
+      </div>
+
+      <!-- SECONDARY -->
+      <div class="section-group" id="group-secondary">
+        <div class="section-header">
+          <div class="section-label">Additional Lines</div>
+          <div class="section-line"></div>
+          <div class="section-count" id="secondaryCount"></div>
+        </div>
+        <div class="mfr-grid" id="grid-secondary"></div>
+        <div class="mfr-list" id="list-secondary">
+          <div class="list-header">
+            <div>Manufacturer</div><div>Products</div><div>Category</div><div></div>
+          </div>
+          <div id="list-secondary-rows"></div>
+        </div>
+      </div>
+
+      <!-- No results -->
+      <div class="no-results" id="noResults">
+        <div class="no-results-num">0</div>
+        <div class="no-results-text">No manufacturers match <strong id="noResultsTerm"></strong>.</div>
+        <button class="no-results-clear" onclick="clearAll()">Clear Filters</button>
+      </div>
+
+      <!-- ADDITIONAL PRODUCTS BAND -->
+      <div class="additional-band" id="additionalBand">
+        <div class="additional-inner">
+          <div class="additional-title">Also Available</div>
+          <div class="additional-heading">Additional <em>Product Lines.</em></div>
+          <div class="additional-list" id="additionalList"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="app-footer">
+  <div class="left">
+    <span>JEDCO Air Systems</span>
+    <span class="sep">·</span>
+    <span>1105 Satellite Blvd, Suite 300, Suwanee, GA 30024</span>
+    <span class="sep">·</span>
+    <a href="tel:6786082858">678-608-2858</a>
+    <span class="sep">·</span>
+    <a href="mailto:sales@jedcoairsystems.com">sales@jedcoairsystems.com</a>
+  </div>
+  <div class="right">
+    <a href="https://jedcoairsystems.com">jedcoairsystems.com ↗</a>
+  </div>
+</footer>
+
+<script>
+const CATEGORIES = [
+  { id: 'all',               label: 'All Manufacturers' },
+  { id: 'registers-grilles', label: 'Registers & Grilles' },
+  { id: 'dampers-louvers',   label: 'Dampers & Louvers' },
+  { id: 'fans',              label: 'Fans' },
+  { id: 'access-doors',      label: 'Access Doors' },
+  { id: 'iaq',               label: 'IAQ / Filtration' },
+  { id: 'heat',              label: 'Heat' },
+  { id: 'specialty',         label: 'Specialty' }
+];
+const CAT_LABEL = Object.fromEntries(CATEGORIES.map(c => [c.id, c.label]));
+
+const MANUFACTURERS = [
+  { name: "Krueger",          url: "https://www.krueger-hvac.com",        products: ["Registers", "Grilles", "Diffusers", "Terminal Units", "Fan Coils"],             tags: ["registers-grilles"],          section: "primary" },
+  { name: "ACME Fans",        url: "https://www.acmefan.com",             products: ["Commercial Fans", "Lab Fans", "Industrial Fans"],                               tags: ["fans"],                       section: "primary" },
+  { name: "United Enertech",  url: "https://www.unitedenertech.com",      products: ["Louvers", "Dampers", "Fire Smoke", "Fire Dampers"],                            tags: ["dampers-louvers"],            section: "primary" },
+  { name: "Indeeco",          url: "https://www.indeeco.com",             products: ["Electric Heat", "Heat Trace"],                                                  tags: ["heat"],                       section: "primary" },
+  { name: "Twin City Fan",    url: "https://www.tcf.com",                 products: ["Commercial Fans", "Lab Fans", "Industrial Fans"],                               tags: ["fans"],                       section: "primary" },
+  { name: "FabricAir",        url: "https://www.fabricair.com",           products: ["Fabric Duct Systems"],                                                          tags: ["specialty"],                  section: "primary" },
+  { name: "Sterling HVAC",    url: "https://www.sterlinghvac.com",        products: ["Gas Unit Heaters", "Make-Up Air Systems", "Infrared Unit Heaters"],            tags: ["heat"],                       section: "primary" },
+  { name: "SpaceRay",         url: "https://www.spaceray.com",            products: ["Gas Tube Heaters", "Gas Ceramic Heaters"],                                     tags: ["heat"],                       section: "primary" },
+  { name: "CaptiveAire",      url: "https://www.captiveaire.com",         products: ["Commercial Fans", "Kitchen Hoods", "Grease Duct"],                             tags: ["fans", "specialty"],          section: "primary" },
+  { name: "Fantech",          url: "https://www.fantech.net",             products: ["Radon Fans", "HEPA Filtration", "ERVs", "Dryer Booster"],                     tags: ["fans", "iaq"],                section: "primary" },
+  { name: "Fittes",           url: "https://www.fitteshvac.com",          products: ["Contemporary Wall Registers", "Contemporary Floor Registers"],                 tags: ["registers-grilles"],          section: "primary" },
+  { name: "Broan-NuTone",     url: "https://www.broan-nutone.com",        products: ["Cabinet Fans", "Inline Fans", "Fresh Air Dampers", "Fresh Air Supply Fan"],   tags: ["fans", "dampers-louvers"],    section: "primary" },
+  { name: "Acudor",           url: "https://www.acudor.com",              products: ["Access Doors", "Roof Hatches", "Smoke Vents"],                                 tags: ["access-doors"],               section: "secondary" },
+  { name: "AES Industries",   url: "https://www.aesindustries.com",       products: ["Concentric Drop Boxes", "Drop Box Diffusers", "Structural Roof Curbs"],       tags: ["specialty"],                  section: "secondary" },
+  { name: "Air Balance",      url: "https://www.airbalanceinc.com",       products: ["Dampers", "Louvers", "Silencers / Attenuation"],                               tags: ["dampers-louvers"],            section: "secondary" },
+  { name: "AJ Manufacturing", url: "https://www.ajmfg.com",              products: ["Registers", "Grilles", "Diffusers", "Stainless Steel"],                        tags: ["registers-grilles"],          section: "secondary" },
+  { name: "Amana",            url: "https://www.amana-ptac.com",          products: ["PTACs", "VTACs"],                                                               tags: ["heat", "specialty"],          section: "secondary" },
+  { name: "American Louver",  url: "https://www.americanlouver.com",      products: ["Plastic Diffusers", "Plastic Egg Crate"],                                      tags: ["registers-grilles"],          section: "secondary" },
+  { name: "American Warming", url: "https://www.awv.com",                 products: ["Louvers", "Dampers"],                                                           tags: ["dampers-louvers"],            section: "secondary" },
+  { name: "Automatic Airflow Balance", url: "https://www.autoairbal.com", products: ["Air Balancing Valves", "Constant Volume Dampers"],                            tags: ["dampers-louvers"],            section: "secondary" },
+  { name: "Babcock Davis",    url: "https://www.babcockdavis.com",        products: ["Access Doors", "Roof Hatches", "Smoke Vents"],                                 tags: ["access-doors"],               section: "secondary" },
+  { name: "Belimo",           url: "https://www.belimo.com",              products: ["Gas Detection"],                                                                tags: ["specialty"],                  section: "secondary" },
+  { name: "C&S Air Products", url: "https://www.csairproducts.com",       products: ["Louvers", "Control Dampers", "Fire Dampers"],                                  tags: ["dampers-louvers"],            section: "secondary" },
+  { name: "Curbs Plus",       url: "https://www.curbsplus.com",           products: ["Concentric Diffusers", "Drop Box Diffusers", "Curbs"],                        tags: ["specialty"],                  section: "secondary" },
+  { name: "Dynasonics",       url: "https://www.dynasonics.com",          products: ["Silencers", "Acoustical Louvers", "Sound Attenuators", "Acoustical Panels"],  tags: ["specialty"],                  section: "secondary" },
+  { name: "Envira-North",     url: "https://www.envira-north.com",        products: ["HVLS Fans"],                                                                    tags: ["fans"],                       section: "secondary" },
+  { name: "Friedrich",        url: "https://www.friedrich.com",           products: ["Mini Splits", "VTACs", "PTACs"],                                               tags: ["heat", "specialty"],          section: "secondary" },
+  { name: "GE Appliances",    url: "https://www.geappliances.com",        products: ["Mini Splits", "PTACs"],                                                         tags: ["heat", "specialty"],          section: "secondary" },
+  { name: "Grill Works",      url: "https://www.grillworksinc.com",       products: ["Wood Floor Registers", "Wood Filter Grilles"],                                 tags: ["registers-grilles"],          section: "secondary" },
+  { name: "Hart & Cooley",    url: "https://www.hartandcooley.com",       products: ["Registers", "Grilles", "Diffusers"],                                           tags: ["registers-grilles"],          section: "secondary" },
+  { name: "Honeywell",        url: "https://www.honeywellhome.com",       products: ["Thermostats", "Gas Detection"],                                                tags: ["specialty", "iaq"],           section: "secondary" },
+  { name: "Kees Inc.",        url: "https://www.keesinc.com",             products: ["Access Doors", "Security Grilles", "Stainless Steel Grilles"],                tags: ["access-doors", "registers-grilles"], section: "secondary" },
+  { name: "LG",               url: "https://www.lg.com/us/business/hvac", products: ["Mini Splits", "PTACs"],                                                        tags: ["heat", "specialty"],          section: "secondary" },
+  { name: "Macurco",          url: "https://www.macurco.com",             products: ["Gas Detection"],                                                                tags: ["iaq", "specialty"],           section: "secondary" },
+  { name: "Mars",             url: "https://www.marsair.com",             products: ["Air Curtains"],                                                                 tags: ["specialty"],                  section: "secondary" },
+  { name: "Modine",           url: "https://www.modine.com",              products: ["Gas Unit Heaters", "Gas Radiant Heaters"],                                     tags: ["heat"],                       section: "secondary" },
+  { name: "Panasonic",        url: "https://na.panasonic.com/us/hvac",    products: ["Fans"],                                                                         tags: ["fans"],                       section: "secondary" },
+  { name: "Plastec Vent",     url: "https://www.plastecvent.com",         products: ["High Static Fans", "Corrosion Resistant Fans"],                               tags: ["fans"],                       section: "secondary" },
+  { name: "Plenums Inc.",     url: "https://www.plenumsincorporated.com", products: ["Concentric Diffusers", "Drop Box Supplies"],                                  tags: ["registers-grilles", "specialty"], section: "secondary" },
+  { name: "Raymon Donco",     url: "https://www.raymondonco.com",         products: ["Registers", "Grilles", "Diffusers"],                                           tags: ["registers-grilles"],          section: "secondary" },
+  { name: "Rectorseal / Truaire", url: "https://www.rectorseal.com",      products: ["Registers", "Grilles", "Diffusers"],                                           tags: ["registers-grilles"],          section: "secondary" },
+  { name: "RenewAire",        url: "https://www.renewaire.com",           products: ["Commercial ERVs"],                                                              tags: ["fans", "iaq"],                section: "secondary" },
+  { name: "Santa-Fe",         url: "https://www.santa-fe-products.com",   products: ["Dehumidifiers"],                                                               tags: ["iaq"],                        section: "secondary" },
+  { name: "Softaire Diffusers", url: "https://www.softairediffusers.com", products: ["High Performance Ceiling Diffusers"],                                         tags: ["registers-grilles"],          section: "secondary" },
+  { name: "Soler & Palau",    url: "https://www.solerpalau-usa.com",      products: ["Cabinet Fans", "Roof Top Propellers", "Sidewall Prop"],                      tags: ["fans"],                       section: "secondary" },
+  { name: "Tamarack",         url: "https://www.tamtech.com",             products: ["Silencers / Attenuation", "Cape Backdraft Dampers"],                          tags: ["dampers-louvers", "specialty"], section: "secondary" },
+  { name: "Thermaflex",       url: "https://www.thermaflex.com",          products: ["Flexible Insulated Duct"],                                                     tags: ["specialty"],                  section: "secondary" },
+  { name: "USAire",           url: "https://www.usaire.com",              products: ["Registers", "Grilles", "Diffusers"],                                           tags: ["registers-grilles"],          section: "secondary" },
+  { name: "Warren Technology", url: "https://www.warrentechnology.com",   products: ["Electric Duct Heaters", "Restring Kits"],                                     tags: ["heat"],                       section: "secondary" },
+  { name: "WellAir",          url: "https://www.wellair.com",             products: ["Plasma Air Purification"],                                                     tags: ["iaq"],                        section: "secondary" }
+];
+
+const ADDITIONAL = [
+  "Snaplock Pipe", "Spiral Pipe & Fittings", "Plastic Diffusers", "Wood & Brass Registers",
+  "Cast Iron Grilles", "Aluminum Egg Crate", "Kitchen Hoods", "Grease Ducts",
+  "Variable Volume Diffusers", "Roof Curbs & Equipment Supports", "Security Grilles",
+  "FabricAir Duct Systems", "Pleated Filters & Accessories", "Permanent Filters",
+  "Remote Powered Balance Dampers", "Unistrut", "Threaded Rod", "PVC Pipe & Fittings",
+  "Air Purifiers", "Condensate Pumps", "Float Switches", "Gripple Cable",
+  "Heat Trace", "Gas Detection Systems", "Welding Exhaust Systems",
+  "Vehicle Exhaust Systems", "Fan Coils"
+];
+
+// ── STATE ──
+let state = { cat: 'all', search: '', view: 'grid', sort: 'curated' };
+
+// ── HELPERS ──
+function domain(u) { return u.replace(/https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
+
+function cardHTML(m) {
+  const d = domain(m.url);
+  const primaryTag = CAT_LABEL[m.tags[0]] || '';
+  return `<a class="mfr-card" href="${m.url}" target="_blank" rel="noopener" data-name="${m.name.toLowerCase()}" data-tags="${m.tags.join(' ')}" data-products="${m.products.join(' ').toLowerCase()}">
+    <div class="card-top">
+      <div class="mfr-name">${m.name}</div>
+      <svg class="ext-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </div>
+    <div class="mfr-domain">${d}</div>
+    <ul class="mfr-products">
+      ${m.products.slice(0,5).map(p => `<li>${p}</li>`).join('')}
+    </ul>
+    <div class="card-footer">
+      <span class="card-tag">${primaryTag}</span>
+      <span class="visit-btn">Visit
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+      </span>
+    </div>
+  </a>`;
+}
+
+function rowHTML(m) {
+  const primaryTag = CAT_LABEL[m.tags[0]] || '';
+  return `<a class="list-row" href="${m.url}" target="_blank" rel="noopener" data-name="${m.name.toLowerCase()}" data-tags="${m.tags.join(' ')}" data-products="${m.products.join(' ').toLowerCase()}">
+    <div class="row-name">${m.name}</div>
+    <div class="row-products">${m.products.join(' · ')}</div>
+    <div class="row-tag">${primaryTag}</div>
+    <div class="row-visit">Visit
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+    </div>
+  </a>`;
+}
+
+// ── RENDER ──
+function renderManufacturers() {
+  let primaries   = MANUFACTURERS.filter(m => m.section === 'primary');
+  let secondaries = MANUFACTURERS.filter(m => m.section === 'secondary');
+  if (state.sort === 'alpha') {
+    primaries   = [...primaries].sort((a,b) => a.name.localeCompare(b.name));
+    secondaries = [...secondaries].sort((a,b) => a.name.localeCompare(b.name));
+  } else if (state.sort === 'alpha-desc') {
+    primaries   = [...primaries].sort((a,b) => b.name.localeCompare(a.name));
+    secondaries = [...secondaries].sort((a,b) => b.name.localeCompare(a.name));
+  }
+  document.getElementById('grid-primary').innerHTML   = primaries.map(cardHTML).join('');
+  document.getElementById('grid-secondary').innerHTML = secondaries.map(cardHTML).join('');
+  document.getElementById('list-primary-rows').innerHTML   = primaries.map(rowHTML).join('');
+  document.getElementById('list-secondary-rows').innerHTML = secondaries.map(rowHTML).join('');
+}
+
+function renderCategories() {
+  const totals = {};
+  CATEGORIES.forEach(c => totals[c.id] = 0);
+  totals.all = MANUFACTURERS.length;
+  MANUFACTURERS.forEach(m => m.tags.forEach(t => { if (totals[t] !== undefined) totals[t]++; }));
+  document.getElementById('catList').innerHTML = CATEGORIES.map(c =>
+    `<li class="cat-item ${c.id === state.cat ? 'active' : ''}" data-cat="${c.id}" onclick="onCat('${c.id}')">
+      <span>${c.label}</span>
+      <span class="cat-count">${totals[c.id]}</span>
+    </li>`
+  ).join('');
+}
+
+function renderAdditional() {
+  document.getElementById('additionalList').innerHTML =
+    ADDITIONAL.map(p => `<span class="additional-item">${p}</span>`).join('');
+}
+
+// ── FILTER ──
+function applyFilters() {
+  const allCards = document.querySelectorAll('.mfr-card, .list-row');
+  let visible = 0;
+  allCards.forEach(card => {
+    const nameMatch    = !state.search || card.dataset.name.includes(state.search) || card.dataset.products.includes(state.search);
+    const tagMatch     = state.cat === 'all' || card.dataset.tags.includes(state.cat);
+    const show = nameMatch && tagMatch;
+    card.classList.toggle('hidden', !show);
+    if (show && card.classList.contains('mfr-card')) visible++;
+  });
+  ['primary', 'secondary'].forEach(sec => {
+    const group    = document.getElementById('group-' + sec);
+    const anyVisible = [...group.querySelectorAll('.mfr-card')].some(c => !c.classList.contains('hidden'));
+    group.classList.toggle('all-hidden', !anyVisible);
+    const n = [...group.querySelectorAll('.mfr-card')].filter(c => !c.classList.contains('hidden')).length;
+    document.getElementById(sec + 'Count').textContent = `${n} ${n === 1 ? 'Line' : 'Lines'}`;
+  });
+  document.getElementById('visibleCount').textContent    = visible;
+  document.getElementById('totalCountInline').textContent = MANUFACTURERS.length;
+  document.getElementById('noResults').classList.toggle('show', visible === 0);
+  document.getElementById('noResultsTerm').textContent   = state.search ? `"${state.search}"` : 'this filter';
+
+  const filtering = state.cat !== 'all' || state.search !== '';
+  document.getElementById('additionalBand').style.display = filtering ? 'none' : '';
+
+  const titleEl = document.getElementById('toolbarTitle');
+  titleEl.innerHTML = state.cat === 'all' ? `All <em>Manufacturers</em>` : `<em>${CAT_LABEL[state.cat]}</em>`;
+
+  const chips = [];
+  if (state.cat !== 'all') {
+    chips.push(`<span class="chip">${CAT_LABEL[state.cat]} <button onclick="onCat('all')" aria-label="Clear"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span>`);
+  }
+  if (state.search) {
+    chips.push(`<span class="chip">"${state.search}" <button onclick="clearSearch()" aria-label="Clear"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span>`);
+  }
+  document.getElementById('activeChips').innerHTML   = chips.join(' ');
+  document.getElementById('activeFilterRow').style.display = chips.length ? '' : 'none';
+}
+
+// ── EVENT HANDLERS ──
+function onSearch(q) {
+  state.search = q.toLowerCase().trim();
+  document.getElementById('searchWrap').classList.toggle('has-value', state.search !== '');
+  applyFilters();
+}
+
+function clearSearch() {
+  state.search = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchWrap').classList.remove('has-value');
+  document.getElementById('searchInput').focus();
+  applyFilters();
+}
+
+function onCat(cat) {
+  state.cat = cat;
+  document.querySelectorAll('.cat-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.cat === cat);
+  });
+  applyFilters();
+  document.getElementById('bodyRegion').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function clearAll() {
+  state.cat    = 'all';
+  state.search = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchWrap').classList.remove('has-value');
+  document.querySelectorAll('.cat-item').forEach(el => el.classList.toggle('active', el.dataset.cat === 'all'));
+  applyFilters();
+}
+
+function setView(view) {
+  state.view = view;
+  document.body.classList.toggle('list-view', view === 'list');
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+}
+
+function onSort(s) {
+  state.sort = s;
+  renderManufacturers();
+  applyFilters();
+}
+
+// ── KEYBOARD ──
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    document.getElementById('searchInput').focus();
+  }
+  if (e.key === 'Escape' && document.activeElement.id === 'searchInput') {
+    clearSearch();
+    document.getElementById('searchInput').blur();
+  }
+});
+
+// ── INIT ──
+renderManufacturers();
+renderCategories();
+renderAdditional();
+applyFilters();
+</script>
+
+</body>
+</html>
