@@ -1078,7 +1078,6 @@
       .cf-row-2 { grid-template-columns: 1fr; }
     }
   </style>
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1653,16 +1652,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 </script>
-<!-- ─── LINE CARD MODAL ─── -->
-<div class="modal-overlay" id="lineCardModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeLineCardModal()" aria-label="Close">&times;</button>
-    <div class="modal-title" id="modalTitle">Request Our Full Line Card</div>
-    <div class="modal-subtitle">We'll send over our complete manufacturer line list.</div>
-    <div id="hubspot-line-card-form"></div>
-  </div>
-</div>
-
 <script>
   // Contact form — submits directly to HubSpot Submissions API
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
@@ -1723,34 +1712,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.textContent = 'Send Message';
   });
 
-  var lineCardFormLoaded = false;
-
-  function openLineCardModal() {
-    document.getElementById('lineCardModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    if (!lineCardFormLoaded) {
-      hbspt.forms.create({
-        portalId: "45626072",
-        formId: "4e134b7a-66a6-4c2e-b8b2-8af919e88739",
-        region: "na1",
-        target: "#hubspot-line-card-form"
-      });
-      lineCardFormLoaded = true;
-    }
-  }
-
-  function closeLineCardModal() {
-    document.getElementById('lineCardModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('lineCardModal').addEventListener('click', function(e) {
-    if (e.target === this) closeLineCardModal();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLineCardModal();
-  });
 </script>
 
 </body>
